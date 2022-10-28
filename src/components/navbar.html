@@ -11,9 +11,12 @@
 </head>
 
 <body class="">
+  <!-- Navigator -->
   <nav>
-    <div id="nav" class="p-12 flex-row flex items-center justify-between duration-700 ease-out transition-all">
-      <div class="block lg:hidden px-6 group" onclick="VerticalNav()">
+    <!-- Nav -->
+    <div id="nav" class="p-12 flex-row flex items-center justify-between transition-all ">
+      <!-- responsive navside md: -->
+      <div class="block lg:hidden px-6 group cursor-pointer" onclick="OpenModal('vertical-nav')">
         <svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512">
           <path
@@ -23,11 +26,12 @@
       </div>
       <div class="px-6">
         <a href="index.html">
-          <img src="img/unknown.png" class="mr-3 h-12" alt="Flowbite Logo">
+          <img src="/src/img/unknown.png" class="mr-3 h-12" alt="NaN">
         </a>
       </div>
-      <div class="hidden lg:block -translate-x-28">
-        <ul class="flex">
+      <!-- Dropdown -->
+      <div class="hidden lg:block">
+        <ul class="flex items-center">
           <li>
             <a href="#" class="ml-12">
               <p class="inline-block
@@ -51,7 +55,7 @@
               </p>
             </a>
           </li>
-          <li class="group inline-block relative ml-12">
+          <li id="nav-dropdown" class="group inline-block relative ml-12">
             <p class="inline-block
                 relative
                 cursor-pointer
@@ -71,28 +75,29 @@
                 group-hover:before:opacity-100
                 ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
             </p>
-            <div>
-              <ul
-                class="absolute invisible opacity-0 p-3 bg-white translate-y-10 drop-shadow-2xl z-index-99 group-hover:block group-hover:visible group-hover:delay-200 group-hover:translate-y-5 duration-500 group-hover:opacity-100">
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
-                    href="#">Auspicious
-                    Tree</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Air
-                    Purifying Tree</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Easy
-                    Care
-                    Plants</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
-                    href="#">Flowering
-                    Trees</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
-                    href="#">Tropical
-                    Trees</a></li>
-              </ul>
+            <div class="">
+              <div id="modal-dropdown" class="absolute opacity-0 p-3 bg-white drop-shadow-2xl rounded hidden mt-6">
+                <ul>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Auspicious
+                      Tree</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Air
+                      Purifying Tree</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Easy
+                      Care
+                      Plants</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Flowering
+                      Trees</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Tropical
+                      Trees</a></li>
+                </ul>
+              </div>
             </div>
           </li>
           <li class="">
@@ -120,9 +125,10 @@
           </li>
         </ul>
       </div>
+      <!-- nav account -->
       <div class="flex-row flex">
         <div class="mr-4">
-          <button id="search-modal" onclick="SearchBar()">
+          <button id="search-modal" onclick="OpenModal('search-bar')">
             <svg class="w-[18px] h-[18px] mx-3" fill="currentColor" stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
               <path
@@ -143,72 +149,87 @@
         </div>
         <div class="mr-4">
           <a href="#">
-            <svg class="w-[20px] h-[20px] mx-3" fill="currentColor" stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path
-                d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
-              </path>
-            </svg>
+            <div class="relative inline-block">
+              <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
+                </path>
+              </svg>
+              <div
+                class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs text-white bg-black rounded-full text-white">
+                0</div>
+            </div>
           </a>
         </div>
       </div>
+
     </div>
 
     <!-- Vertical Nav -->
-    <aside id="vertical-nav"
-      class="container absolute mx-0 flex invisible -translate-x-96 transition-all duration-700 z-10 top-0"
-      aria-label="Sidebar">
-      <div id="nav-menu" class="w-96 h-screen justify-between flex flex-col absolute bg-white z-10">
-        <!-- Menu -->
-        <ul class=" p-6">
-          <li class="mt-0 py-3 px-3 hover:bg-gray-300 translate-all duration-500">
-            <a href="index.html">Home</a>
-          </li>
-          <li class="mt-0 group">
-            <div class="justify-between flex hover:bg-gray-300 py-3 px-3 transition-all duration-500">
-              <label for="">Type of Trees</label>
-              <i class="fa-sharp fa-solid fa-angle-down"></i>
+    <navside id="vertical-nav" class="absolute mx-0 top-0 z-30" aria-label="Sidebar">
+      <!-- Container -->
+      <div class="absolute">
+        <div class="flex w-[30em] h-screen flex justify-between">
+          <!-- Navigator -->
+          <div id="nav-menu" class="w-full bg-white border flex flex-col justify-between">
+            <ul class=" py-6 px-3">
+              <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
+                <a href="index.html">Home</a>
+              </li>
+              <li id="asd" class="mt-0">
+                <div class="justify-between flex py-3 px-3 hover:bg-gray-200 transition-all">
+                  <label for="">Type of Trees</label>
+                  <i class="fa-sharp fa-solid fa-angle-right"></i>
+                </div>
+                <div id="type-tree-dropdown" class="ml-3">
+                  <ul>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Auspicious Tree</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Air Purifying Tree</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Easy Care Plants</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Flowering trees</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Tropical trees</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
+                <a href="#">Recommend</a>
+              </li>
+            </ul>
+            <!-- Auth -->
+            <div class="flex flex-col lg:hidden block py-6 px-3 mb-6">
+              <label class="text-xl" for="">My Account</label>
+              <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
+              <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
             </div>
-            <div class="hidden group-hover:block -translate-y-5 group-hover:translate-y-0 transition-all duration-700">
-              <ul>
-                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a href="#">Auspicious</a>
-                </li>
-                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a href="#">Purifying
-                    Tree</a></li>
-                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a href="#">Care Plants</a>
-                </li>
-                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a href="#">Flowering</a>
-                </li>
-                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a href="#">Tropical
-                    Trees</a></li>
+          </div>
+          <!-- Type of Tree vertical nav -->
+          <!-- <div id="tree-of-type" class="w-full hidden bg-white border">
+            <div class="flex-col flex">
+              <div class="flex items-center mx-3 py-3 mt-2">
+                <i class="fa-solid fa-arrow-left"></i>
+                <p class="ml-4">Back</p>
+              </div>
+              <ul class="mx-3">
+                <li class="py-3">Auspicious Tree</li>
+                <li class="py-3">Air Purifying Tree</li>
+                <li class="py-3">Easy Care Plants</li>
+                <li class="py-3">Flowering trees</li>
+                <li class="py-3">Tropical trees</li>
               </ul>
             </div>
-          </li>
-          <li class="mt-0 py-3 px-3 hover:bg-gray-300 translate-all duration-500">
-            <a href="#">Recommend</a>
-          </li>
-        </ul>
-        <!-- Auth -->
-        <div class="flex flex-col lg:hidden block p-6 mb-6">
-          <label class="text-xl" for="">My Account</label>
-          <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
-          <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
+          </div> -->
         </div>
       </div>
-    </aside>
-
-    <div id="nav-bg"
-      class="w-full h-full duration-700 bg-[#333333] invisible transition-all ease-out opacity-0 absolute top-0"
-      onclick="VerticalNav()">
-    </div>
+    </navside>
 
     <!-- Search bar -->
-    <div id="search-bar" class="w-full absolute top-0 -translate-y-[15em] transition-all duration-700 z-10">
+    <div id="search-bar" class="w-full top-0 absolute hidden z-30">
       <div class="bg-white md:block hidden">
         <div class="pt-12 pb-6 px-12 flex-row flex items-center justify-between">
           <div class="px-6 md:block hidden">
             <a href="index.html">
-              <img src="img/unknown.png" class="mr-3 h-12" alt="Flowbite Logo">
+              <img src="/src/img/unknown.png" class="mr-3 h-12" alt="NaN">
             </a>
           </div>
           <div class="w-2/3 px-12">
@@ -245,16 +266,17 @@
             </div>
           </div>
         </div>
-        <div class="container mx-auto pb-12">
+        <div class="container mx-auto pb-6">
           <div class="text-center">
             <p>Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
           </div>
         </div>
       </div>
-      <div class="md:hidden block px-6 mt-3 bg-white">
+      <!-- search bar responsive -->
+      <div class="md:hidden block px-6 py-3 bg-white">
         <div class="flex justify-between">
           <label for="">Search our store</label>
-          <button onclick="SearchBar()" class="px-1">
+          <button onclick="OpenModal('search-bar')" class="px-1">
             <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512">
               <path
@@ -281,27 +303,111 @@
       </div>
     </div>
   </nav>
-
-  <div id="search-bg"
-    class="w-full h-full duration-700 bg-[#333333] invisible transition-all ease-out opacity-0 absolute"
-    onclick="SearchBar()">
+  <!-- Fade Background -->
+  <div id="fade-bg" class="w-full h-full bg-[#333333] hidden opacity-0 absolute top-0 z-20"
+    onclick="OpenModal('fade-bg')">
   </div>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script>
-  const SearchBar = () => {
-    document.getElementById('nav').classList.toggle('invisible')
-    document.getElementById('search-bar').classList.toggle('-translate-y-[15em]')
-    document.getElementById('search-bg').classList.toggle('invisible')
-    document.getElementById('search-bg').classList.toggle('opacity-0')
-    document.getElementById('search-bg').classList.toggle('opacity-50')
+  const searchbar_tl = gsap.timeline({
+    paused: true,
+    repeat: 0
+  });
+
+  searchbar_tl.from("#search-bar", {
+      opacity: 1,
+      y: -150,
+      duration: .3,
+      ease: 'expo-out'
+    })
+    .to('#search-bar', {
+      display: 'block',
+      duration: .3
+    }, 0)
+    .to('#fade-bg', {
+      display: 'block',
+      opacity: .5,
+      duration: .3
+    }, 0);
+
+  const OpenModal = (t) => {
+    const tle = document.getElementById('fade-bg');
+    if (!tle.classList.contains('active')) {
+      tle.classList.add('active');
+      if (t == 'search-bar') {
+        searchbar_tl.play();
+      } else if (t == 'vertical-nav') {
+        navside_tl.play();
+      }
+      console.log("OpenModal() called, opening...");
+    } else if (tle.classList.contains('active') && t == 'fade-bg') {
+      tle.classList.remove('active');
+      searchbar_tl.reverse();
+      navside_tl.reverse();
+      console.log("OpenModal() called, closing...");
+    } else {
+      tle.classList.remove('active');
+      if (t == 'search-bar') {
+        searchbar_tl.reverse();
+      } else if (t == 'vertical-nav') {
+        navside_tl.reverse();
+      }
+      console.log("OpenModal() called, closing...");
+    };
   };
-  const VerticalNav = () => {
-    document.getElementById('vertical-nav').classList.toggle('-translate-x-96')
-    document.getElementById('vertical-nav').classList.toggle('invisible');
-    document.getElementById('nav-bg').classList.toggle('invisible');
-    document.getElementById('nav-bg').classList.toggle('opacity-0');
-    document.getElementById('nav-bg').classList.toggle('opacity-50');
-  };
+
+  let nav_dropdown = gsap.timeline({
+    paused: true,
+    repeat: 0
+  })
+
+  const dropdown = document.querySelector('#nav-dropdown');
+  const dropdown_hover = nav_dropdown.to('#modal-dropdown', {
+    duration: .3,
+    y: -5,
+    ease: 'expo-out',
+    opacity: 1,
+    display: 'block',
+  })
+  dropdown.addEventListener('mouseenter', () => dropdown_hover.play());
+  dropdown.addEventListener('mouseleave', () => dropdown_hover.reverse());
+
+  let navside_tl = gsap.timeline({
+    paused: true,
+    repeat: 0,
+  })
+  navside_tl.from('#vertical-nav', {
+      x: '-30em',
+      opacity: 1,
+      duration: .3,
+      ease: 'expo-out',
+      display: 'block',
+    })
+    .to('#fade-bg', {
+      display: 'block',
+      opacity: .5,
+      duration: .3
+    }, 0);
+
+
+  let type_tree_dropdown = gsap.timeline({
+    paused: true,
+    repeat: 0
+  })
+
+  const tree_dropdown = document.querySelector('#asd');
+  const tree_dropdown_hover2 = type_tree_dropdown.from('#type-tree-dropdown', {
+    duration: .3,
+    y: -25,
+    ease: 'expo-out',
+    display: 'none',
+    opacity: 0
+  });
+  tree_dropdown.addEventListener('mouseenter', () => tree_dropdown_hover2.play());
+  tree_dropdown.addEventListener('mouseleave', () => tree_dropdown_hover2.reverse());
 </script>
+
 
 </html>
