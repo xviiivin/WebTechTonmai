@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <title>Ton Mai</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+  }
+</style>
+
+<body>
+  <!-- Fade Background -->
+  <div id="fade-bg" class="w-full h-full bg-[#333333] hidden opacity-0 absolute top-0 z-20"
+    onclick="OpenModal('fade-bg')">
+  </div>
+
+
+
+  <!-- Navigator -->
+  <nav>
+    <!-- Nav -->
+    <div id="nav" class="p-12 flex-row flex items-center justify-between transition-all ">
+      <!-- responsive navside md: -->
+      <div class="block lg:hidden px-6 group cursor-pointer" onclick="OpenModal('vertical-nav')">
+        <svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512">
+          <path
+            d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z">
+          </path>
+        </svg>
+      </div>
+      <div class="px-6">
+        <a href="index.html">
+          <img src="/src/img/unknown.png" class="mr-3 h-12" alt="NaN">
+        </a>
+      </div>
+      <!-- Dropdown -->
+      <div class="hidden lg:block">
+        <ul class="flex items-center">
+          <li>
+            <a href="#" class="ml-12">
+              <p class="inline-block
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-2
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  hover:before:w-full
+                  hover:before:opacity-100">
+                Home
+              </p>
+            </a>
+          </li>
+          <li id="nav-dropdown" class="group inline-block relative ml-12">
+            <p class="inline-block
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-1
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  group-hover:before:w-full
+                  group-hover:before:opacity-100
+                  ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
+            </p>
+            <div id="modal-dropdown" class="absolute p-3 bg-white drop-shadow-2xl rounded hidden opacity-100 mt-6">
+              <ul>
+                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
+                    href="#">Auspicious
+                    Tree</a>
+                </li>
+                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
+                    href="#">Air
+                    Purifying Tree</a>
+                </li>
+                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
+                    href="#">Easy
+                    Care
+                    Plants</a>
+                </li>
+                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
+                    href="#">Flowering
+                    Trees</a>
+                </li>
+                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
+                    href="#">Tropical
+                    Trees</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="">
+            <a href="#" class="mx-12">
+              <p class="inline-block
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-1
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  hover:before:w-full
+                  hover:before:opacity-100">
+                recommend
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- nav account -->
+      <div class="flex-row flex">
+        <div class="mr-4 items-center">
+          <button id="search-modal" onclick="OpenModal('search-bar')">
+            <svg class="w-[18px] h-[18px] mx-3" fill="currentColor" stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <div class="mr-4 lg:block hidden">
+          <a href="#">
+            <svg class="w-[20px] h-[20px] mx-3" fill="currentColor" stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+              </path>
+            </svg>
+          </a>
+        </div>
+        <div class="mr-4">
+          <a href="#">
+            <div class="relative inline-block">
+              <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
+                </path>
+              </svg>
+              <div
+                class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs text-white bg-black rounded-full text-white">
+                0</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Vertical Nav -->
+    <navside id="vertical-nav" class="absolute mx-0 top-0 z-30" aria-label="Sidebar">
+      <!-- Container -->
+      <div class="absolute">
+        <div class="flex w-[30em] h-screen flex justify-between">
+          <!-- Navigator -->
+          <div id="nav-menu" class="w-full bg-white border flex flex-col justify-between">
+            <ul class=" py-6 px-3">
+              <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
+                <a href="index.html">Home</a>
+              </li>
+              <li id="asd" class="mt-0">
+                <div class="justify-between flex py-3 px-3 hover:bg-gray-200 transition-all">
+                  <label for="">Type of Trees</label>
+                  <i class="fa-sharp fa-solid fa-angle-right"></i>
+                </div>
+                <div id="type-tree-dropdown" class="ml-3">
+                  <ul>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Auspicious Tree</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Air Purifying Tree</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Easy Care Plants</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Flowering trees</li>
+                    <li class="p-3 hover:bg-gray-200 transition-all">Tropical trees</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
+                <a href="#">Recommend</a>
+              </li>
+            </ul>
+            <!-- Auth -->
+            <div class="flex flex-col lg:hidden block py-6 px-3 mb-6">
+              <label class="text-xl" for="">My Account</label>
+              <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
+              <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
+            </div>
+          </div>
+          <!-- Type of Tree vertical nav -->
+          <!-- <div id="tree-of-type" class="w-full hidden bg-white border">
+              <div class="flex-col flex">
+                <div class="flex items-center mx-3 py-3 mt-2">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  <p class="ml-4">Back</p>
+                </div>
+                <ul class="mx-3">
+                  <li class="py-3">Auspicious Tree</li>
+                  <li class="py-3">Air Purifying Tree</li>
+                  <li class="py-3">Easy Care Plants</li>
+                  <li class="py-3">Flowering trees</li>
+                  <li class="py-3">Tropical trees</li>
+                </ul>
+              </div>
+            </div> -->
+        </div>
+      </div>
+    </navside>
+
+    <!-- Search bar -->
+    <div id="search-bar" class="w-full top-0 absolute hidden z-30">
+      <div class="bg-white md:block hidden">
+        <div class="pt-12 pb-6 px-12 flex-row flex items-center justify-between">
+          <div class="px-6 md:block hidden">
+            <a href="index.html">
+              <img src="/src/img/unknown.png" class="mr-3 h-12" alt="NaN">
+            </a>
+          </div>
+          <div class="w-2/3 px-12">
+            <form action="/search" method="GET" class="relative w-full flex border border-black rounded-md p-1">
+              <input type="text" placeholder="Search products" aria-label="Search products" class="w-full h-11 px-3"
+                style="border: none;">
+              <button class="absolute top-px right-0 py-3 px-3.5">
+                <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+                  </path>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="flex flex-row px-6">
+            <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+              </path>
+            </svg>
+            <div class="relative inline-block">
+              <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
+                </path>
+              </svg>
+              <div
+                class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs text-white bg-black rounded-full text-white">
+                0</div>
+            </div>
+          </div>
+        </div>
+        <div class="container mx-auto pb-6">
+          <div class="text-center">
+            <p>Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+          </div>
+        </div>
+      </div>
+      <!-- search bar responsive -->
+      <div class="md:hidden block px-6 py-3 bg-white">
+        <div class="flex justify-between">
+          <label for="">Search our store</label>
+          <button onclick="OpenModal('search-bar')" class="px-1">
+            <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512">
+              <path
+                d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <form action="/search" method="GET" novalidate="" class="relative w-full flex border border-black mt-3">
+          <input type="text" placeholder="Search products" aria-label="Search products" class="w-full h-11 px-3"
+            style="border: none;">
+          <button class="absolute top-px right-0 py-3 px-3.5">
+            <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+              </path>
+            </svg>
+          </button>
+        </form>
+        <div class="w-full align-center items-center md:text-center pb-9 mt-3">
+          <p class="text-gray-500">Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Home -->
+  <div id="content">
+
+    <!-- Banner -->
+    <section>
+      <div class="h-[830px] w-screen items-center flex bg-gray-200">
+        <div class="p-24 z-10">
+          <div class="flex flex-col p-2">
+            <h4 class="font-medium text-lg mb-3">Auspicious Tree</h4>
+            <h2 class="text-6xl mb-6">In Stock</h2>
+            <button class="border-black border py-2 px-6 bg-black text-white w-36">Shop Now</button>
+          </div>
+        </div>
+
+        <!-- <img class="z-0 absolute max-w-none h-[818px] src="#" alt=""> -->
+      </div>
+    </section>
+
+    <!-- Popular -->
+    <section>
+      <div class=" w-screen my-12">
+
+        <!-- header -->
+        <div class="flex justify-center">
+          <h3 class="text-3xl font-light">Popular</h3>
+        </div>
+
+        <!-- items -->
+        <div id="items" class="mt-3 flex p-3 h-96 overflow-x-auto">
+          <div class="flex">
+            <div class="w-96 mb-6 mr-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 1</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+            <div class="w-96 mb-6 mr-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 2</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+            <div class="w-96 mb-6 mr-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 3</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+            <div class="w-96 mb-6 mr-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 4</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+            <div class="w-96 mb-6 mr-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 4</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+            <div class="w-96 mb-6">
+              <div class="bg-gray-100 w-full h-full"></div>
+              <div class="flex justify-between text-lg mt-2">
+                <p>Tonmai 4</p>
+                <!-- <p>120$</p> -->
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended -->
+    <section>
+      <div class="w-screen my-12">
+
+        <!-- header -->
+        <div class="flex justify-center">
+          <h3 class="text-3xl font-light mr-3 text-gray-400">Recommended</h3>
+          <div id="recommend_tree"
+            class="flex relative inline-block transition-all duraion-500 before:w-full before:h-[2px] before:absolute before:content-[''] before:bg-black before:-bottom-1 min-w-min">
+            <div class="flex items-center">
+              <p class="text-3xl font-light mr-6 font-medium">Auspicious Tree</p>
+              <i class="fa-sharp fa-solid fa-angle-down"></i>
+            </div>
+            <div id="recommend_tree_dropdown" class="absolute hidden opacity-0 drop-shadow-xl">
+              <ul>
+                <li><a
+                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                    href="#">Auspicious
+                    Tree</a>
+                </li>
+                <li><a
+                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                    href="#">Air
+                    Purifying Tree</a>
+                </li>
+                <li><a
+                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                    href="#">Easy
+                    Care
+                    Plants</a>
+                </li>
+                <li><a
+                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                    href="#">Flowering
+                    Trees</a>
+                </li>
+                <li><a
+                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                    href="#">Tropical
+                    Trees</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- items -->
+        <div class="mt-3 flex justify-center p-3">
+          <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+            <div class="">
+              <div class="bg-gray-100 w-80 h-80"></div>
+            </div>
+            <div class="">
+              <div class="bg-gray-100 w-80 h-80"></div>
+            </div>
+            <div class="hidden lg:block">
+              <div class="bg-gray-100 w-80 h-80"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- all products -->
+    <section>
+      <div class="w-screen my-12">
+
+        <!-- header -->
+        <div class="flex justify-center mb-6">
+          <h3 class="text-3xl font-light mr-3">All Product</h3>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4 mx-6">
+
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex bg-gray-200 rounded max-w-sm">
+              <div class="p-4">
+                <div class="bg-black w-24 h-24 rounded-md"></div>
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3">
+                <div>
+                  <h5 class="">Tonmai leaf</h5>
+                  <label class="text-gray-400 text-sm">Air purifying trees / Auspicious tree </label>
+                </div>
+                <div class="flex justify-between items-center">
+                  <p>$9.99</p>
+                  <i class="fa-regular fa-square-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="/src/navbar.js"></script>
+<script src="/src/home.js"></script>
+
+</html>
