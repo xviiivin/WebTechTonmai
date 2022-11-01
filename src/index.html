@@ -26,14 +26,12 @@
     onclick="OpenModal('fade-bg')">
   </div>
 
-
-
   <!-- Navigator -->
   <nav>
     <!-- Nav -->
-    <div id="nav" class="p-12 flex-row flex items-center justify-between transition-all ">
+    <div id="nav" class="sm:px-12 px-6 py-12 flex-row flex items-center justify-between transition-all ">
       <!-- responsive navside md: -->
-      <div class="block lg:hidden px-6 group cursor-pointer" onclick="OpenModal('vertical-nav')">
+      <div class="block lg:hidden group cursor-pointer" onclick="OpenModal('vertical-nav')">
         <svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512">
           <path
@@ -41,9 +39,9 @@
           </path>
         </svg>
       </div>
-      <div class="px-6">
+      <div class="">
         <a href="index.html">
-          <img src="/src/img/unknown.png" class="mr-3 h-12" alt="NaN">
+          <img class="h-14 min-w-min" src="/src/img/unknown.png" alt="NaN">
         </a>
       </div>
       <!-- Dropdown -->
@@ -92,29 +90,29 @@
                   group-hover:before:opacity-100
                   ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
             </p>
-            <div id="modal-dropdown" class="absolute p-3 bg-white drop-shadow-2xl rounded hidden opacity-100 mt-6">
-              <ul>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
-                    href="#">Auspicious
-                    Tree</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
-                    href="#">Air
-                    Purifying Tree</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
-                    href="#">Easy
-                    Care
-                    Plants</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
-                    href="#">Flowering
-                    Trees</a>
-                </li>
-                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500"
-                    href="#">Tropical
-                    Trees</a></li>
-              </ul>
+            <div class="">
+              <div id="modal-dropdown" class="absolute opacity-0 p-3 bg-white drop-shadow-2xl rounded hidden mt-6">
+                <ul>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Auspicious
+                      Tree</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Air
+                      Purifying Tree</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500" href="#">Easy
+                      Care
+                      Plants</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Flowering
+                      Trees</a>
+                  </li>
+                  <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                      href="#">Tropical
+                      Trees</a></li>
+                </ul>
+              </div>
             </div>
           </li>
           <li class="">
@@ -143,38 +141,38 @@
         </ul>
       </div>
       <!-- nav account -->
-      <div class="flex-row flex">
-        <div class="mr-4 items-center">
+      <div class="flex-row flex justify-center">
+        <div class="mr-6">
           <button id="search-modal" onclick="OpenModal('search-bar')">
-            <svg class="w-[18px] h-[18px] mx-3" fill="currentColor" stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <svg class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
               <path
                 d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
               </path>
             </svg>
           </button>
         </div>
-        <div class="mr-4 lg:block hidden">
+        <div class="md:block hidden mr-6">
           <a href="#">
-            <svg class="w-[20px] h-[20px] mx-3" fill="currentColor" stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512">
               <path
                 d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
               </path>
             </svg>
           </a>
         </div>
-        <div class="mr-4">
+        <div class="">
           <a href="#">
             <div class="relative inline-block">
-              <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+              <svg class="w-[20px] h-[20px] cursor-pointer" fill="currentColor" stroke="currentColor"
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                   d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
                 </path>
               </svg>
               <div
-                class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs text-white bg-black rounded-full text-white">
+                class="inline-flex absolute -top-3 -right-3 justify-center items-center w-5 h-5 text-xs text-white bg-black rounded-full text-white">
                 0</div>
             </div>
           </a>
@@ -187,7 +185,7 @@
     <navside id="vertical-nav" class="absolute mx-0 top-0 z-30" aria-label="Sidebar">
       <!-- Container -->
       <div class="absolute">
-        <div class="flex w-[30em] h-screen flex justify-between">
+        <div class="flex w-[20em] min-w-[11/12] h-screen flex justify-between">
           <!-- Navigator -->
           <div id="nav-menu" class="w-full bg-white border flex flex-col justify-between">
             <ul class=" py-6 px-3">
@@ -214,7 +212,7 @@
               </li>
             </ul>
             <!-- Auth -->
-            <div class="flex flex-col lg:hidden block py-6 px-3 mb-6">
+            <div class="flex flex-col md:hidden block py-6 px-3 mb-6">
               <label class="text-xl" for="">My Account</label>
               <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
               <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
@@ -251,8 +249,8 @@
           </div>
           <div class="w-2/3 px-12">
             <form action="/search" method="GET" class="relative w-full flex border border-black rounded-md p-1">
-              <input type="text" placeholder="Search products" aria-label="Search products" class="w-full h-11 px-3"
-                style="border: none;">
+              <input type="text" placeholder="Search products" aria-label="Search products"
+                class="w-full h-11 px-3 focus:outline-0" style="border: none;">
               <button class="absolute top-px right-0 py-3 px-3.5">
                 <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -303,8 +301,8 @@
           </button>
         </div>
         <form action="/search" method="GET" novalidate="" class="relative w-full flex border border-black mt-3">
-          <input type="text" placeholder="Search products" aria-label="Search products" class="w-full h-11 px-3"
-            style="border: none;">
+          <input type="text" placeholder="Search products" aria-label="Search products"
+            class="w-full h-11 px-3 focus:outline-0" style="border: none;">
           <button class="absolute top-px right-0 py-3 px-3.5">
             <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -319,24 +317,56 @@
         </div>
       </div>
     </div>
-  </nav>
 
+  </nav>
 
   <!-- Home -->
   <div id="content">
 
     <!-- Banner -->
     <section>
-      <div class="h-[830px] w-screen items-center flex bg-gray-200">
-        <div class="p-24 z-10">
+      <div
+        class="h-[20em] md:h-[30em] lg:h-[42em] w-screen items-center flex bg-[url('/src/img/demo_banner.jpg')] bg-no-repeat">
+        <div class="p-24 z-10 md:block hidden">
           <div class="flex flex-col p-2">
             <h4 class="font-medium text-lg mb-3">Auspicious Tree</h4>
             <h2 class="text-6xl mb-6">In Stock</h2>
             <button class="border-black border py-2 px-6 bg-black text-white w-36">Shop Now</button>
           </div>
         </div>
-
-        <!-- <img class="z-0 absolute max-w-none h-[818px] src="#" alt=""> -->
+      </div>
+      <!-- responsive -->
+      <div class="md:hidden block">
+        <div class="p-4 z-10 flex justify-center">
+          <div class="flex flex-col p-2 items-center">
+            <h4 class="font-medium text-lg mb-3">Auspicious Tree</h4>
+            <h2 class="text-6xl mb-6">In Stock</h2>
+            <button class="border-black border py-2 px-6 bg-black text-white w-36">Shop Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- nav control slider -->
+      <div class="md:hidden block">
+        <div class="flex justify-center">
+          <div class="grid gap-4 grid-cols-4">
+            <div class="w-[20px] h-[20px] flex justify-center items-center">
+              <div class="w-[10px] h-[10px] hover:scale-125 bg-black rounded-full transition-all duration-300">
+              </div>
+            </div>
+            <div class="w-[20px] h-[20px] flex justify-center items-center">
+              <div class="w-[10px] h-[10px] hover:scale-125 bg-black rounded-full transition-all duration-300">
+              </div>
+            </div>
+            <div class="w-[20px] h-[20px] flex justify-center items-center">
+              <div class="w-[10px] h-[10px] hover:scale-125 bg-black rounded-full transition-all duration-300">
+              </div>
+            </div>
+            <div class="w-[20px] h-[20px] flex justify-center items-center">
+              <div class="w-[10px] h-[10px] hover:scale-125 bg-black rounded-full transition-all duration-300">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -395,10 +425,7 @@
               </div>
             </div>
           </div>
-
-
         </div>
-      </div>
     </section>
 
     <!-- Recommended -->
@@ -407,41 +434,43 @@
 
         <!-- header -->
         <div class="flex justify-center">
-          <h3 class="text-3xl font-light mr-3 text-gray-400">Recommended</h3>
-          <div id="recommend_tree"
-            class="flex relative inline-block transition-all duraion-500 before:w-full before:h-[2px] before:absolute before:content-[''] before:bg-black before:-bottom-1 min-w-min">
-            <div class="flex items-center">
-              <p class="text-3xl font-light mr-6 font-medium">Auspicious Tree</p>
-              <i class="fa-sharp fa-solid fa-angle-down"></i>
-            </div>
-            <div id="recommend_tree_dropdown" class="absolute hidden opacity-0 drop-shadow-xl">
-              <ul>
-                <li><a
-                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
-                    href="#">Auspicious
-                    Tree</a>
-                </li>
-                <li><a
-                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
-                    href="#">Air
-                    Purifying Tree</a>
-                </li>
-                <li><a
-                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
-                    href="#">Easy
-                    Care
-                    Plants</a>
-                </li>
-                <li><a
-                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
-                    href="#">Flowering
-                    Trees</a>
-                </li>
-                <li><a
-                    class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
-                    href="#">Tropical
-                    Trees</a></li>
-              </ul>
+          <div class="flex flex-col sm:flex-row items-center gap-2">
+            <h3 class="text-3xl font-light mr-3 text-gray-400">Recommended</h3>
+            <div id="recommend_tree"
+              class="flex relative inline-block transition-all duraion-500 before:w-full before:h-[2px] before:absolute before:content-[''] before:bg-black before:-bottom-1 min-w-min">
+              <div class="flex items-center">
+                <p class="text-3xl font-light mr-6 font-medium">Auspicious Tree</p>
+                <i class="fa-sharp fa-solid fa-angle-down"></i>
+              </div>
+              <div id="recommend_tree_dropdown" class="absolute hidden opacity-0 drop-shadow-xl">
+                <ul>
+                  <li><a
+                      class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                      href="#">Auspicious
+                      Tree</a>
+                  </li>
+                  <li><a
+                      class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                      href="#">Air
+                      Purifying Tree</a>
+                  </li>
+                  <li><a
+                      class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                      href="#">Easy
+                      Care
+                      Plants</a>
+                  </li>
+                  <li><a
+                      class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                      href="#">Flowering
+                      Trees</a>
+                  </li>
+                  <li><a
+                      class="bg-white p-3 w-[12em] block hover:bg-gray-200 hover:text-black duration-500 text-gray-500 text-2xl"
+                      href="#">Tropical
+                      Trees</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
