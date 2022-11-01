@@ -14,7 +14,3 @@ body {
     font-family: 'Prompt', sans-serif;
     height: 100%;
 }
-
-.linearG {
-    background: linear-gradient(90deg, #ffffff 55%, #F2F2F2 45%);
-}
