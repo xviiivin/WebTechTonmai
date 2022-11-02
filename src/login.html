@@ -1,15 +1,22 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <title>Tun Mai</title>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+    * {
+      font-family: 'Kanit', sans-serif;
+    }
+  </style>
 </head>
 
-<body class="">
+<body>
   <!-- Fade Background -->
   <div id="fade-bg" class="w-full h-full bg-[#333333] hidden opacity-0 absolute top-0 z-20"
     onclick="OpenModal('fade-bg')">
@@ -43,45 +50,45 @@
             <li>
               <a href="#" class="ml-12">
                 <p class="inline-block
-                    relative
-                    cursor-pointer
-                    transition-all
-                    duration-500
-                    before:content-['']
-                    before:absolute
-                    before:-bottom-2
-                    before:left-0
-                    before:w-0
-                    before:h-[2px]
-                    before:opacity-0
-                    before:transition-all
-                    before:duration-500
-                    before:bg-black
-                    hover:before:w-full
-                    hover:before:opacity-100">
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-2
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  hover:before:w-full
+                  hover:before:opacity-100">
                   Home
                 </p>
               </a>
             </li>
             <li id="nav-dropdown" class="group inline-block relative ml-12">
               <p class="inline-block
-                    relative
-                    cursor-pointer
-                    transition-all
-                    duration-500
-                    before:content-['']
-                    before:absolute
-                    before:-bottom-1
-                    before:left-0
-                    before:w-0
-                    before:h-[2px]
-                    before:opacity-0
-                    before:transition-all
-                    before:duration-500
-                    before:bg-black
-                    group-hover:before:w-full
-                    group-hover:before:opacity-100
-                    ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-1
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  group-hover:before:w-full
+                  group-hover:before:opacity-100
+                  ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
               </p>
               <div id="modal-dropdown" class="absolute p-3 bg-white drop-shadow-2xl rounded hidden opacity-100 mt-6">
                 <ul>
@@ -116,22 +123,22 @@
             <li class="">
               <a href="#" class="mx-12">
                 <p class="inline-block
-                    relative
-                    cursor-pointer
-                    transition-all
-                    duration-500
-                    before:content-['']
-                    before:absolute
-                    before:-bottom-1
-                    before:left-0
-                    before:w-0
-                    before:h-[2px]
-                    before:opacity-0
-                    before:transition-all
-                    before:duration-500
-                    before:bg-black
-                    hover:before:w-full
-                    hover:before:opacity-100">
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-1
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  hover:before:w-full
+                  hover:before:opacity-100">
                   recommend
                 </p>
               </a>
@@ -302,10 +309,83 @@
     </div>
   </nav>
 
+  <div id="content">
 
 
+    <section>
+      <!-- Header -->
+      <div class="flex items-center justify-center flex-col mb-16">
+        <h1 class="text-4xl">Login</h1>
+      </div>
+
+      <!-- auth -->
+      <div class="flex container mx-auto px-14 flex-col md:flex-row gap-12 justify-center">
+
+        <!-- login -->
+        <div class="flex flex-col w-11/12 max-w-lg">
+          <h1 class="text-2xl">Login</h1>
+          <div class="py-2">
+            <!-- <span class="px-1 text-sm text-gray-600">Username</span> -->
+            <input type="text" placeholder="Username"
+              class="text-md block px-3 py-2 space-x-10 rounded-lg bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none w-full">
+          </div>
+
+          <div class="py-2" x-data="{ show: true }">
+            <div class="relative">
+              <input placeholder="Password" :type="show ? 'password' : 'text'"
+                class="text-md block px-3 py-2 rounded-lg bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white  focus:border-gray-600  focus:outline-none w-full">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm ">
+                <svg class="h-6 text-gray-700" fill="none" @click="show = !show"
+                  :class="{'hidden ': !show, 'block ':show }" viewbox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13
+                                      0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16
+                                      0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0
+                                      1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z ">
+                  </path>
+                </svg>
+                <svg class="h-6 text-gray-700" fill="none" @click="show = !show;console.log('wadaw')  "
+                  :class=" { 'block ': !show, 'hidden ':show } " viewbox="0 0 576 512">
+                  <path fill="currentColor"
+                    d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+
+          <a class="text-[#9E9E9E]" href="#">Forget your password?</a>
+          <div>
+            <button
+              class="mt-3 text-lg font-semibold bg-black text-white rounded-lg shadow-xl hover:text-white hover:bg-[#202020] py-3 w-full">
+              Sign in
+            </button>
+          </div>
+        </div>
+
+        <!-- new customer -->
+        <div class="flex flex-col w-11/12 max-w-lg">
+          <h1 class="text-2xl">New Customer</h1>
+          <p class="text-[#9E9E9E]">Sign up here to become one of us!</p>
+          <div>
+            <button
+              class="mt-3 text-lg font-semibold bg-black text-white rounded-lg shadow-xl hover:text-white hover:bg-[#202020] py-3 px-12">
+              Register
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js " defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="/src/navbar.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="/src/navbar.js"></script>
 
 </html>
