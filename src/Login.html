@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+        * {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+     <!-- nav -->
+    <nav>
+        <div id="nav" class="p-14 flex-row flex items-center justify-between duration-500 ease-out transition-all">
+            <div class="block lg:hidden px-6 group" onclick="VerticalNav()">
+                <svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                        d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z">
+                    </path>
+                </svg>
+            </div>
+            <div class="px-6">
+                <a href="index.html">
+                    <img src="img/unknown.png" class="mr-3 h-12" alt="Flowbite Logo">
+                </a>
+            </div>
+            <div class="hidden lg:block -translate-x-28">
+                <ul class="flex">
+                    <li>
+                        <a href="#" class="ml-12">
+                            <p class="inline-block
+                    relative
+                    cursor-pointer
+                    transition-all
+                    duration-500
+                    before:content-['']
+                    before:absolute
+                    before:-bottom-2
+                    before:left-0
+                    before:w-0
+                    before:h-[2px]
+                    before:opacity-0
+                    before:transition-all
+                    before:duration-500
+                    before:bg-black
+                    hover:before:w-full
+                    hover:before:opacity-100">
+                                Home
+                            </p>
+                        </a>
+                    </li>
+                    <li class="group inline-block relative ml-12">
+                        <p class="inline-block
+                    relative
+                    cursor-pointer
+                    transition-all
+                    duration-500
+                    before:content-['']
+                    before:absolute
+                    before:-bottom-1
+                    before:left-0
+                    before:w-0
+                    before:h-[2px]
+                    before:opacity-0
+                    before:transition-all
+                    before:duration-500
+                    before:bg-black
+                    group-hover:before:w-full
+                    group-hover:before:opacity-100
+                    ">Type of Trees<i class="fa-solid fa-chevron-down ml-2"></i>
+                        </p>
+                        <div>
+                            <ul
+                                class="absolute invisible opacity-0 p-3 bg-white translate-y-10 drop-shadow-2xl z-10 group-hover:block group-hover:visible group-hover:delay-200 group-hover:translate-y-5 duration-500 group-hover:opacity-100">
+                                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                                        href="#">Auspicious
+                                        Tree</a>
+                                </li>
+                                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                                        href="#">Air
+                                        Purifying Tree</a>
+                                </li>
+                                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                                        href="#">Easy
+                                        Care
+                                        Plants</a>
+                                </li>
+                                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                                        href="#">Flowering
+                                        Trees</a>
+                                </li>
+                                <li><a class="bg-white p-3 w-[12em] block hover:bg-gray-200 duration-500 text-gray-500"
+                                        href="#">Tropical
+                                        Trees</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href="#" class="mx-12">
+                            <p class="inline-block
+                    relative
+                    cursor-pointer
+                    transition-all
+                    duration-500
+                    before:content-['']
+                    before:absolute
+                    before:-bottom-1
+                    before:left-0
+                    before:w-0
+                    before:h-[2px]
+                    before:opacity-0
+                    before:transition-all
+                    before:duration-500
+                    before:bg-black
+                    hover:before:w-full
+                    hover:before:opacity-100">
+                                recommend
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-row flex">
+                <div class="mr-4">
+                    <button id="search-modal" onclick="SearchBar()">
+                        <svg class="w-[18px] h-[18px] mx-3" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mr-4">
+                    <a href="#" class="lg:block hidden">
+                        <svg class="w-[20px] h-[20px] mx-3" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="mr-4">
+                    <a href="#">
+                        <svg class="w-[20px] h-[20px] mx-3" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Nav -->
+        <aside id="vertical-nav"
+            class="container absolute mx-0 flex invisible -translate-x-96 transition-all duration-700 z-10 top-0"
+            aria-label="Sidebar">
+            <div id="nav-menu" class="w-96 h-screen justify-between flex flex-col absolute bg-white z-10">
+                <!-- Menu -->
+                <ul class=" p-6">
+                    <li class="mt-0 py-3 px-3 hover:bg-gray-300 translate-all duration-500">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="mt-0 group">
+                        <div class="justify-between flex hover:bg-gray-300 py-3 px-3 transition-all duration-500">
+                            <label for="">Type of Trees</label>
+                            <i class="fa-sharp fa-solid fa-angle-down"></i>
+                        </div>
+                        <div
+                            class="hidden group-hover:block -translate-y-5 group-hover:translate-y-0 transition-all duration-700">
+                            <ul>
+                                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a
+                                        href="#">Auspicious</a>
+                                </li>
+                                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a
+                                        href="#">Purifying
+                                        Tree</a></li>
+                                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a
+                                        href="#">Care Plants</a>
+                                </li>
+                                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500"><a
+                                        href="#">Flowering</a>
+                                </li>
+                                <li class="mt-0 py-3 px-3 ml-4 hover:bg-gray-300 translate-all duration-500 z-[50]"><a
+                                        href="#">Tropical
+                                        Trees</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mt-0 py-3 px-3 hover:bg-gray-300 translate-all duration-500">
+                        <a href="#">Recommend</a>
+                    </li>
+                </ul>
+                <!-- Auth -->
+                <div class="flex flex-col lg:hidden block p-6 mb-6">
+                    <label class="text-xl" for="">My Account</label>
+                    <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
+                    <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
+                </div>
+            </div>
+        </aside>
+
+        <div id="nav-bg"
+            class="w-full h-full duration-700 bg-[#333333] invisible transition-all ease-out opacity-0 absolute top-0"
+            onclick="VerticalNav()">
+        </div>
+
+        <!-- Search bar -->
+        <div id="search-bar" class="w-full absolute top-0 -translate-y-[15em] transition-all duration-700 z-10">
+            <div class="bg-white md:block hidden">
+                <div class="pt-12 pb-6 px-12 flex-row flex items-center justify-between">
+                    <div class="px-6 md:block hidden">
+                        <a href="index.html">
+                            <img src="img/unknown.png" class="mr-3 h-12" alt="Flowbite Logo">
+                        </a>
+                    </div>
+                    <div class="w-2/3 px-12">
+                        <form action="/search" method="GET"
+                            class="relative w-full flex border border-black rounded-md p-1">
+                            <input type="text" placeholder="Search products" aria-label="Search products"
+                                class="w-full h-11 px-3" style="border: none;">
+                            <button class="absolute top-px right-0 py-3 px-3.5">
+                                <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor"
+                                    stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="flex flex-row px-6">
+                        <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+                            </path>
+                        </svg>
+                        <div class="relative inline-block">
+                            <svg class="w-[20px] h-[20px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z">
+                                </path>
+                            </svg>
+                            <div
+                                class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs text-white bg-black rounded-full text-white">
+                                0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto pb-12">
+                    <div class="text-center">
+                        <p>Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden block px-6 mt-3 bg-white">
+                <div class="flex justify-between">
+                    <label for="">Search our store</label>
+                    <button onclick="SearchBar()" class="px-1">
+                        <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path
+                                d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <form action="/search" method="GET" novalidate="" class="relative w-full flex border border-black mt-3">
+                    <input type="text" placeholder="Search products" aria-label="Search products"
+                        class="w-full h-11 px-3" style="border: none;">
+                    <button class="absolute top-px right-0 py-3 px-3.5">
+                        <svg class="w-[18px] h-[18px] mx-3 cursor-pointer" fill="currentColor" stroke="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="w-full align-center items-center md:text-center pb-9 mt-3">
+                    <p class="text-gray-500">Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search-bg"
+        class="w-full h-full duration-700 bg-[#333333] invisible transition-all ease-out opacity-0 absolute"
+        onclick="SearchBar()">
+    </div>
+    <div class="container mx-auto px-4">
+       
+        <!-- undernav -->
+        <div class='text-center'>
+            <p class='text-4xl mb-[25px]'>Login</p>
+        </div>
+
+        <div class="flex-wrap sm:flex justify-center">
+            <div class="w-[500px] xl:mr-16">
+                <form>
+                    <div class="mx-auto max-w-lg">
+                        <span class="px-1 text-[1.5em] ">Login</span>
+                        <div class="py-2">
+                            <!-- <span class="px-1 text-sm text-gray-600">Username</span> -->
+                            <input type="text" placeholder="Username"
+                                class="text-md block px-3 py-2  rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                        </div>
+
+                        <div class="py-2" x-data="{ show: true }">
+                            <div class="relative">
+                                <input placeholder="Password" :type="show ? 'password' : 'text'"
+                                    class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white  focus:border-gray-600 z-0 focus:outline-none">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                    <svg class="h-6 text-gray-700" fill="none" @click="show = !show"
+                                        :class="{'hidden ': !show, 'block ':show }" 
+                                        viewbox="0 0 576 512">
+                                        <path fill="currentColor"
+                                            d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-6 text-gray-700" fill="none"
+                                        @click="show = !show;console.log('wadaw')  "
+                                        :class=" { 'block ': !show, 'hidden ':show } "
+                                         viewbox="0 0 640 512 ">
+                                        <path fill="currentColor "
+                                            d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13
+                                            0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16
+                                            0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0
+                                            1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z ">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <label class="block text-gray-500 font-bold my-4 ">
+                                <input type="checkbox" class="leading-loose text-pink-600 ">
+                                <span class="py-2 text-sm text-gray-600 leading-snug">Remember Me
+                                </span>
+                            </label>
+                            <label class="block text-gray-500 font-bold my-4 ">
+                                <a href="# "
+                                    class="cursor-pointer tracking-tighter text-black border-b-2 border-gray-200 hover:border-gray-400 ">
+                                    <span>Forgot Password?</span>
+                                </a>
+                            </label>
+                        </div>
+                        <button
+                            class="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black ">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="w-[500px] ">
+                <p class='text-2xl mb-1'>New customer</p>
+                <p class='text-sm text-gray-600 mb-4 '>Sign up here to become one of us!</p>
+                <button
+                    class="mt-3 text-lg font-semibold bg-gray-800 text-white rounded-lg px-8 py-1.5 block shadow-xl hover:text-white hover:bg-black ">
+                    Register
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js " defer></script>
+    <script>
+        const SearchBar = () => {
+            document.getElementById('nav').classList.toggle('invisible')
+            document.getElementById('search-bar').classList.toggle('-translate-y-[15em]')
+            document.getElementById('search-bg').classList.toggle('invisible')
+            document.getElementById('search-bg').classList.toggle('opacity-0')
+            document.getElementById('search-bg').classList.toggle('opacity-50')
+        };
+        const VerticalNav = () => {
+            document.getElementById('vertical-nav').classList.toggle('-translate-x-96')
+            document.getElementById('vertical-nav').classList.toggle('invisible');
+            document.getElementById('nav-bg').classList.toggle('invisible');
+            document.getElementById('nav-bg').classList.toggle('opacity-0');
+            document.getElementById('nav-bg').classList.toggle('opacity-50');
+        };
+    </script>
+</body>
+
+</html>
