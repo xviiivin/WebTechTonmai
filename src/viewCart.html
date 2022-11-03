@@ -19,16 +19,6 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Prompt', sans-serif;
   }
-
-  .maxline {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* number of lines to show */
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
 </style>
 
 <body>
@@ -419,13 +409,13 @@
   <div class="container mx-auto px-4 py-20">
     <div class="flex flex-col">
       <h1 class="text-4xl font-bold flex justify-center">Shopping Cart</h1>
-      <div class="flex justify-center mt-4 font-bold text-md">
+      <div class="flex justify-center mt-4 text-md">
         <!-- to home button-->
         <a href="#" class="">Home&nbsp;>&nbsp;</a>
         <p>Your Shopping Cart</p>
       </div>
-      <table class="table-fixed mt-8 border-collapse border-collapse border-b border-gray-300 font-bold text-md">
-        <thead class="border-collapse border-b border-gray-300">
+      <table class="table-fixed mt-8 border-collapse border-collapse border-b border-gray-300">
+        <thead class="border-collapse border-b border-gray-300 font-bold text-lg">
           <th class="lg:w-[55%] text-left">Product</th>
           <th class="text-end hidden sm:table-cell lg:w-[10%] lg:text-left">Price</th>
           <th class="lg:w-[25%] text-left hidden lg:table-cell">Quantity</th>
@@ -440,9 +430,8 @@
         <td class="flex mt-8 mb-8">
           <img src="\src\img\demo_tree.png" class="w-32 h-32" alt="tonmai">
           <div class="grid content-center ml-8 mr-8">
-            <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aliquid accusamus ex
-              doloremque quidem inventore, earum sed deleniti corporis reiciendis qui reprehenderit tenetur quaerat
-              ducimus. Recusandae optio eius asperiores mollitia.</p>
+            <p class="text-lg font-bold">Tonmai</p>
+            <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aperiam velit quaerat iste nostrum reiciendis recusandae, ipsum molestias quis modi commodi maiores officia atque nemo impedit, magnam ullam natus totam.</p>
             <div class="">
               <p class="text-gray-500 text-sm underline">Remove</p>
             </div>
@@ -497,14 +486,15 @@
           <p>$12.00</p>
         </td>
       </tr>
+
+      <!-- Add more item example -->
       <tr>
         <!-- item content -->
         <td class="flex mt-8 mb-8">
           <img src="\src\img\demo_tree.png" class="w-32 h-32" alt="tonmai">
           <div class="grid content-center ml-8 mr-8">
-            <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aliquid accusamus ex
-              doloremque quidem inventore, earum sed deleniti corporis reiciendis qui reprehenderit tenetur quaerat
-              ducimus. Recusandae optio eius asperiores mollitia.</p>
+            <p class="text-lg font-bold">Tonmai</p>
+            <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aperiam velit quaerat iste nostrum reiciendis recusandae, ipsum molestias quis modi commodi maiores officia atque nemo impedit, magnam ullam natus totam.</p>
             <div class="">
               <p class="text-gray-500 text-sm underline">Remove</p>
             </div>
@@ -559,14 +549,14 @@
           <p>$12.00</p>
         </td>
       </tr>
+
       <tr>
         <!-- item content -->
         <td class="flex mt-8 mb-8">
           <img src="\src\img\demo_tree.png" class="w-32 h-32" alt="tonmai">
           <div class="grid content-center ml-8 mr-8">
-            <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia aliquid accusamus ex
-              doloremque quidem inventore, earum sed deleniti corporis reiciendis qui reprehenderit tenetur quaerat
-              ducimus. Recusandae optio eius asperiores mollitia.</p>
+            <p class="text-lg font-bold">Tonmai</p>
+            <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aperiam velit quaerat iste nostrum reiciendis recusandae, ipsum molestias quis modi commodi maiores officia atque nemo impedit, magnam ullam natus totam.</p>
             <div class="">
               <p class="text-gray-500 text-sm underline">Remove</p>
             </div>
