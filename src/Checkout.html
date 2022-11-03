@@ -24,10 +24,12 @@
 <body id="body">
   <div class="h-full">
     <div class="grid h-full md:grid-cols-1 lg:grid-cols-2">
+
+      <!-- Form information -->
       <form class="lg:p-20 p-12">
         <h1 class="font-bold text-4xl">Shipping</h1>
         <div class="visible flex mb-4 mt-4 justify-between lg:invisible lg:mt-0 lg:mb-0">
-          <!-- Bar -->
+          <!-- Cart Responsive Bar -->
           <a id="aToggle">
             <div class="
             inline-block
@@ -48,7 +50,7 @@
                 hover:before:w-full
                 hover:before:opacity-100">
               <p id="Summary" class="text-md font-bold inline-block">Show summary</p>
-              <i class="fa-solid fa-chevron-down ml-2"></i>
+              <i id="chevron" class="fa-solid fa-chevron-down ml-2"></i>
             </div>
           </a>
           <div>
@@ -56,6 +58,7 @@
           </div>
         </div>
 
+        <!-- Show/Hide summary -->
         <div id="Toggle" class="hidden">
           <div class="visible pl-8 pr-8 pb-8 bg-[#F2F2F2] rounded-md mb-4 lg:hidden">
             <div class="sm:grid sm:grid-cols-3">
@@ -106,8 +109,8 @@
 
         <div class="grid gap-y-5">
           <lable>
-            <a href="#" class="font-bold pt-5 text-sm text-[#928F8F]">Cart</a>
-            <span class="font-bold text-sm text-[#928F8F]">&nbsp;>&nbsp;&nbsp;Shipping</span>
+            <a href="#" class="pt-5 text-sm text-[#928F8F]">Cart</a>
+            <span class="text-sm text-[#928F8F]">&nbsp;>&nbsp;&nbsp;Shipping</span>
           </lable>
           <hr>
           <p class="text-[#928F8F] font-bold lg:text-2xl md:text-xl">Contact information</p>
@@ -143,6 +146,8 @@
           </div>
         </div>
       </form>
+
+      <!-- Summary (on the right) -->
       <div class="hidden p-12 lg:p-20 lg:pl-20 lg:block lg:bg-[#F2F2F2]">
         <div class="grid grid-cols-3">
           <div>
