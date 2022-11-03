@@ -50,22 +50,22 @@
             <li>
               <a href="#" class="">
                 <p class="inline-block
-                  relative
-                  cursor-pointer
-                  transition-all
-                  duration-500
-                  before:content-['']
-                  before:absolute
-                  before:-bottom-2
-                  before:left-0
-                  before:w-0
-                  before:h-[2px]
-                  before:opacity-0
-                  before:transition-all
-                  before:duration-500
-                  before:bg-black
-                  hover:before:w-full
-                  hover:before:opacity-100">
+                relative
+                cursor-pointer
+                transition-all
+                duration-500
+                before:content-['']
+                before:absolute
+                before:-bottom-2
+                before:left-0
+                before:w-0
+                before:h-[2px]
+                before:opacity-0
+                before:transition-all
+                before:duration-500
+                before:bg-black
+                hover:before:w-full
+                hover:before:opacity-100">
                   Home
                 </p>
               </a>
@@ -73,23 +73,23 @@
             <li id="nav-dropdown" class="group inline-block relative">
               <div class="flex gap-2 items-center">
                 <p class="inline-block
-                    relative
-                    cursor-pointer
-                    transition-all
-                    duration-500
-                    before:content-['']
-                    before:absolute
-                    before:-bottom-1
-                    before:left-0
-                    before:w-0
-                    before:h-[2px]
-                    before:opacity-0
-                    before:transition-all
-                    before:duration-500
-                    before:bg-black
-                    group-hover:before:w-full
-                    group-hover:before:opacity-100
-                    ">Type of Trees
+                  relative
+                  cursor-pointer
+                  transition-all
+                  duration-500
+                  before:content-['']
+                  before:absolute
+                  before:-bottom-1
+                  before:left-0
+                  before:w-0
+                  before:h-[2px]
+                  before:opacity-0
+                  before:transition-all
+                  before:duration-500
+                  before:bg-black
+                  group-hover:before:w-full
+                  group-hover:before:opacity-100
+                  ">Type of Trees
                 </p>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
@@ -126,22 +126,22 @@
             <li class="">
               <a href="#" class="">
                 <p class="inline-block
-                  relative
-                  cursor-pointer
-                  transition-all
-                  duration-500
-                  before:content-['']
-                  before:absolute
-                  before:-bottom-1
-                  before:left-0
-                  before:w-0
-                  before:h-[2px]
-                  before:opacity-0
-                  before:transition-all
-                  before:duration-500
-                  before:bg-black
-                  hover:before:w-full
-                  hover:before:opacity-100">
+                relative
+                cursor-pointer
+                transition-all
+                duration-500
+                before:content-['']
+                before:absolute
+                before:-bottom-1
+                before:left-0
+                before:w-0
+                before:h-[2px]
+                before:opacity-0
+                before:transition-all
+                before:duration-500
+                before:bg-black
+                hover:before:w-full
+                hover:before:opacity-100">
                   recommend
                 </p>
               </a>
@@ -225,6 +225,95 @@
               <label class="text-xl" for="">My Account</label>
               <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
               <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </navside>
+
+    <!-- Vertical Cart -->
+    <navside id="vertical-cart" class="absolute mx-0 top-0 right-[25em] z-30" aria-label="Sidebar">
+      <!-- Container -->
+      <div class="absolute">
+        <div class="w-[25em] min-h-screen max-h-screen flex">
+          <div id="nav-menu" class="w-full bg-white flex flex-col justify-between">
+            <!-- header -->
+            <div class="pt-6 px-3 flex flex-col">
+              <div class="flex justify-between">
+                <header>Shopping</header>
+                <button onclick="OpenModal('vertical-cart')" class="px-1">
+                  <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path
+                      d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+              <!-- items -->
+              <div class="max-h-[47em] overflow-y-auto py-6 flex flex-col gap-4">
+
+                <div class="flex flex-col gap-5">
+                  <div class="flex gap-4 justify-start">
+                    <div>
+                      <img class="min-w-24 min-h-24" src="/src/img/demo_tree.png" alt="">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <div>
+                        <p>Monstera Tree</p>
+                        <p class="text-gray-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Tempore
+                          illo, qui
+                          harum iste amet non
+                          asperiores eius quibusdam totam quae?</p>
+                        <p>120.00$</p>
+                      </div>
+                      <div class="flex gap-4 justify-start items-center">
+                        <div class="flex">
+                          <button class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                            <i class="fa-solid fa-plus"></i>
+                          </button>
+                          <input class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm"
+                            value="1">
+                          <button class="border-black border-2 py-0.5 px-2">
+                            <i class="fa-solid fa-minus"></i>
+                          </button>
+                        </div>
+                        <div class="">
+                          <p class="text-gray-500 text-sm underline">Remove</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- total -->
+            <div class="bg-[#F7F7F7] flex flex-col gap-2 p-6">
+              <div class="flex flex-col items-center">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-truck">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <p class="text-gray-500 text-xs">Shipping</p>
+              </div>
+              <div class="flex justify-between text-sm">
+                <p>Subtotal</p>
+                <p>20.99$</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <button class="bg-black text-white w-full py-0.5">Confirm</button>
+                <a class="text-sm underline">View Cart</a>
+              </div>
             </div>
           </div>
         </div>

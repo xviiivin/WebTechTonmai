@@ -36,12 +36,15 @@ const OpenModal = (t) => {
       searchbar_tl.play();
     } else if (t == "vertical-nav") {
       navside_tl.play();
+    } else if (t == "vertical-cart") {
+      cartside_tl.play();
     }
     console.log("OpenModal() called, opening...");
   } else if (tle.classList.contains("active") && t == "fade-bg") {
     tle.classList.remove("active");
     searchbar_tl.reverse();
     navside_tl.reverse();
+    cartside_tl.reverse();
     console.log("OpenModal() called, closing...");
   } else {
     tle.classList.remove("active");
@@ -49,6 +52,8 @@ const OpenModal = (t) => {
       searchbar_tl.reverse();
     } else if (t == "vertical-nav") {
       navside_tl.reverse();
+    } else if (t == "vertical-cart") {
+      cartside_tl.reverse();
     }
     console.log("OpenModal() called, closing...");
   }
@@ -81,6 +86,28 @@ navside_tl
     duration: 0.3,
     ease: "expo-out",
     display: "block",
+  })
+  .to(
+    "#fade-bg",
+    {
+      display: "block",
+      opacity: 0.5,
+      duration: 0.3,
+    },
+    0
+  );
+
+let cartside_tl = gsap.timeline({
+  paused: true,
+  repeat: 0,
+});
+cartside_tl
+  .from("#vertical-cart", {
+    x: "25em",
+    opacity: 1,
+    duration: 0.3,
+    ease: "expo-out",
+    display: "none",
   })
   .to(
     "#fade-bg",

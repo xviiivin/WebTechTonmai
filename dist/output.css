@@ -548,6 +548,10 @@ video {
   visibility: hidden;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -587,6 +591,22 @@ video {
 
 .-right-2 {
   right: -0.5rem;
+}
+
+.right-\[20em\] {
+  right: 20em;
+}
+
+.right-\[30em\] {
+  right: 30em;
+}
+
+.right-\[25em\] {
+  right: 25em;
+}
+
+.right-\[0em\] {
+  right: 0em;
 }
 
 .z-20 {
@@ -849,6 +869,75 @@ video {
   height: 6rem;
 }
 
+.h-\[200em\] {
+  height: 200em;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-\[20em\] {
+  max-height: 20em;
+}
+
+.max-h-min {
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+
+.max-h-\[30em\] {
+  max-height: 30em;
+}
+
+.max-h-\[60em\] {
+  max-height: 60em;
+}
+
+.max-h-\[40em\] {
+  max-height: 40em;
+}
+
+.max-h-\[45em\] {
+  max-height: 45em;
+}
+
+.max-h-\[50em\] {
+  max-height: 50em;
+}
+
+.max-h-\[49em\] {
+  max-height: 49em;
+}
+
+.max-h-\[48em\] {
+  max-height: 48em;
+}
+
+.max-h-\[48\.5em\] {
+  max-height: 48.5em;
+}
+
+.max-h-\[47em\] {
+  max-height: 47em;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -945,6 +1034,14 @@ video {
   width: auto;
 }
 
+.w-\[30em\] {
+  width: 30em;
+}
+
+.w-\[25em\] {
+  width: 25em;
+}
+
 .min-w-fit {
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -974,6 +1071,10 @@ video {
 .max-w-min {
   max-width: -moz-min-content;
   max-width: min-content;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .-translate-x-28 {
@@ -1029,6 +1130,10 @@ video {
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1043,6 +1148,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -1077,6 +1186,18 @@ video {
   gap: 3rem;
 }
 
+.gap-0 {
+  gap: 0px;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-96 {
+  gap: 24rem;
+}
+
 .gap-y-8 {
   row-gap: 2rem;
 }
@@ -1098,8 +1219,22 @@ video {
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overscroll-y-auto {
+  overscroll-behavior-y: auto;
 }
 
 .rounded {
@@ -1184,6 +1319,26 @@ video {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F7F7F7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 247 247 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
 .p-3 {
   padding: 0.75rem;
 }
@@ -1206,6 +1361,10 @@ video {
 
 .p-14 {
   padding: 3.5rem;
+}
+
+.p-12 {
+  padding: 3rem;
 }
 
 .px-6 {
@@ -1293,6 +1452,21 @@ video {
   padding-right: 5rem;
 }
 
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pt-12 {
   padding-top: 3rem;
 }
@@ -1311,6 +1485,14 @@ video {
 
 .pb-12 {
   padding-bottom: 3rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .text-center {
@@ -1614,6 +1796,11 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1703,6 +1890,10 @@ video {
   .sm\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .sm\:block {
+    display: block;
   }
 
   .sm\:flex {
