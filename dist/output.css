@@ -1065,6 +1065,22 @@ video {
   width: 6rem;
 }
 
+.w-\[30\%\] {
+  width: 30%;
+}
+
+.w-\[10\%\] {
+  width: 10%;
+}
+
+.w-\[20\%\] {
+  width: 20%;
+}
+
+.w-\[15\%\] {
+  width: 15%;
+}
+
 .min-w-min {
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
