@@ -15,6 +15,7 @@ searchbar_tl
     {
       display: "block",
       duration: 0.3,
+      position: "fixed",
     },
     0
   )
@@ -23,6 +24,7 @@ searchbar_tl
     {
       display: "block",
       opacity: 0.5,
+      position: "fixed",
       duration: 0.3,
     },
     0
@@ -88,10 +90,19 @@ navside_tl
     display: "block",
   })
   .to(
+    "#vertical-nav",
+    {
+      duration: 0.3,
+      position: "fixed",
+    },
+    0
+  )
+  .to(
     "#fade-bg",
     {
       display: "block",
       opacity: 0.5,
+      position: "fixed",
       duration: 0.3,
     },
     0
@@ -110,10 +121,19 @@ cartside_tl
     display: "none",
   })
   .to(
+    "#vertical-cart",
+    {
+      duration: 0.3,
+      position: "fixed",
+    },
+    0
+  )
+  .to(
     "#fade-bg",
     {
       display: "block",
       opacity: 0.5,
+      position: "fixed",
       duration: 0.3,
     },
     0
