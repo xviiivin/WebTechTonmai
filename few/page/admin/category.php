@@ -35,8 +35,8 @@ if ($_POST["action"] == "addproduct") {
             echo basename($newfilename);
 
 
-            $query1 = $db->prepare("INSERT INTO product (`name`, `price`, `size`, `watering`, `toolstips`, `basic`, `story`, `category`, `file_name`, `date`) VALUES (:name, :price, :size, :watering, :toolstips, :basic, :story, :category, :file_name, :date)");
-            $query1->execute([':name' => ($_POST["name"]), ':price' => ($_POST["price"]), ':size' => ($_POST["size"]), ':watering' => ($_POST["watering"]), ':toolstips' => ($_POST["toolstips"]), ':basic' => ($_POST["basic"]), ':story' => ($_POST["story"]), ':category' => ($_GET["categoryid"]), ':file_name' => ($newfilename), ':date' => (time())]);
+            $query1 = $db->prepare("INSERT INTO product (`name`, `price`, `size`, `watering`,`sunlight`, `toolstips`, `basic`, `story`, `category`, `file_name`, `date`) VALUES (:name, :price, :size, :watering, :sunlight, :toolstips, :basic, :story, :category, :file_name, :date)");
+            $query1->execute([':name' => ($_POST["name"]), ':price' => ($_POST["price"]), ':size' => ($_POST["size"]), ':watering' => ($_POST["watering"]), ':toolstips' => ($_POST["toolstips"]), ':sunlight' => $_POST["sunlight"], ':basic' => ($_POST["basic"]), ':story' => ($_POST["story"]), ':category' => ($_GET["categoryid"]), ':file_name' => ($newfilename), ':date' => (time())]);
 
             alert("success", "เพิ่มข้อมูลเรียบร้อย");
             header("Refresh:0");
@@ -115,6 +115,8 @@ if (isset($_GET["categoryid"])) {
                             <textarea type="text" name="watering" placeholder="ชื่อสินค้า" class=" mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"> </textarea>
                         </div>
 
+
+                
                         <div class="mt-3">
                             <span class="text-center">
                                 Sunlight
