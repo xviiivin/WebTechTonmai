@@ -8,6 +8,10 @@ ob_start();
 require './include/config.php';
 
 
+if (empty($_SESSION["cart"])) {
+    $_SESSION["cart"] = [];
+}
+
 
 ?>
 
@@ -74,6 +78,7 @@ require './include/config.php';
 <script src="./assets/js/home.js"></script>
 <script src="./assets/js/alpine.js" defer></script>
 <script src="./assets/js/result.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 
 </html>

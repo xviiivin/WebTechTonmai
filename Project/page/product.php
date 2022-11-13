@@ -1,11 +1,60 @@
 <?php
 
+// $_SESSION["cart"] = [];
+
+
+// print_r($_SESSION["cart"]);
 
 if (isset($_GET["id"])) {
 
     $querycategory = $db->prepare("SELECT * FROM `product` WHERE id = :id");
     $querycategory->execute([":id" => $_GET["id"]]);
     $category = $querycategory->fetch(PDO::FETCH_ASSOC);
+
+
+    // foreach ($_SESSION["cart"] as $value) {
+
+    //     if ($value["id"] == $category["id"]) {
+    //         print_r("test ");
+
+    //     }
+
+    // }
+
+
+    if ($_POST["action"] == "addtocart") {
+        $response = [];
+        $product = $category;
+
+
+        $product["count"] = intval($_POST["count"]);
+
+        $status = 0;
+
+        $carttest = [];
+
+        if (count($_SESSION["cart"]) >= 1) {
+            foreach ($_SESSION["cart"] as $value) {
+                if (($product["id"]) == ($value["id"])) {
+                    $value["count"] = $product["count"] + $value["count"];
+                    $status = 1;
+                }
+                array_push($carttest, $value);
+            }
+        }
+
+        if ($status == 1) {
+            $_SESSION["cart"] = $carttest;
+        } else {
+            array_push($_SESSION["cart"], $product);
+        }
+
+        $response["status"] = "success";
+        $response["message"] = "cart";
+        $response["cart"] = $_SESSION["cart"];
+        echo json_encode($response, true);
+        exit();
+    }
 
 ?>
     <div id="detail">
@@ -45,11 +94,11 @@ if (isset($_GET["id"])) {
                                 <div class="flex text-lg justify-between">
                                     <p>Amount</p>
                                     <div class="flex">
-                                        <button class="border-black border-2 py-1 px-3 bg-black text-white">
+                                        <button onclick="cartplusdelete('add')" class="border-black border-2 py-1 px-3 bg-black text-white">
                                             <i class="fa-solid fa-plus"></i>
                                         </button>
-                                        <input class="border-black border-y-2 py-1 px-6 w-14 focus:outline-0" value="1">
-                                        <button class="border-black border-2 py-1 px-3">
+                                        <input class="border-black border-y-2 py-1 text-center w-14 focus:outline-0" min="1" name="cartid" id="cartid" value="1">
+                                        <button onclick="cartplusdelete('delete')" class="border-black border-2 py-1 px-3">
                                             <i class="fa-solid fa-minus"></i>
                                         </button>
                                     </div>
@@ -57,8 +106,11 @@ if (isset($_GET["id"])) {
                             </div>
                             <!-- button -->
                             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <button class="bg-black text-white py-1 px-8 border-black border-2">Buy Now</button>
-                                <button class="bg-white py-1 px-8 border border-black border-2">Add to Cart</button>
+                                <button class="bg-black w-full text-white py-1 px-8 border-black border-2">Buy Now</button>
+
+
+
+                                <button onclick="addtocart();" class="bg-white w-full py-1 px-8 border border-black border-2">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -144,9 +196,7 @@ if (isset($_GET["id"])) {
                                         <header>Story</header>
                                         <div class="m-2">
                                             <p class="text-gray-400 indent-5">
-
                                                 <?= $category["story"] ?>
-
                                             </p>
                                         </div>
                                     </div>
@@ -219,6 +269,42 @@ if (isset($_GET["id"])) {
             </div>
         </section>
     </div>
+
+    <script>
+        var link = `<?= $link . "?page=product&categoryid=" . $_GET["categoryid"] . "&id=" . $_GET["id"] ?>`;
+
+        function cartplusdelete(status) {
+            if (status === "add") {
+                document.getElementById("cartid").value = parseInt(document.getElementById("cartid").value) + 1
+            } else if (status === "delete") {
+                if (parseInt(document.getElementById("cartid").value) !== 1) {
+                    document.getElementById("cartid").value = parseInt(document.getElementById("cartid").value) - 1
+                }
+            }
+        }
+
+        function stringtojson(data) {
+            let test = `{"status"` + data.split(`{"status"`)[4];
+            return (JSON.parse(test))
+        }
+
+        function addtocart() {
+            $.post(link, {
+                action: "addtocart",
+                count: document.getElementById("cartid").value
+            }, function(data) {
+
+                let result = stringtojson(data);
+
+                if (result.status == "success") {
+                    // alert("เพิ่มเข้าตระกร้าสินค้าเรียบร้อย");
+                    OpenModal('vertical-cart')
+                    datacart = result.cart
+                    testfew1()
+                }
+            });
+        }
+    </script>
 <?php
 } else {
     $querycategory = $db->prepare("SELECT * FROM `category` WHERE id = :id");
