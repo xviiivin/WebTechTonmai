@@ -24,8 +24,6 @@ function alert($status, $message)
 }
 
 
-
-
 // $test = $db->prepare('CREATE TABLE users (
 //     id INTEGER PRIMARY KEY,
 //     firstName varchar(255) NOT NULL,
