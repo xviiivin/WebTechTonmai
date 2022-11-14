@@ -206,7 +206,9 @@ if ($_POST["action"] == "deletextocart") {
                     <p id="fewzasubtotal"><?= number_format($subtotal); ?> ฿</p>
                 </div>
                 <div class="flex flex-col gap-2 items-center">
-                    <button class="bg-black text-white w-full py-0.5">Confirm</button>
+
+                    <button class="bg-black text-white w-full py-0.5"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
+
                 </div>
             </div>
         </div>
@@ -362,7 +364,7 @@ if ($_POST["action"] == "deletextocart") {
 
     function stringtojson(data) {
         let test = `{"status"` + data.split(`{"status"`)[4];
-            
+
         return (JSON.parse(test))
     }
 
@@ -378,6 +380,4 @@ if ($_POST["action"] == "deletextocart") {
             }
         });
     }
-
-   
 </script>

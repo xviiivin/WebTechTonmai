@@ -3,19 +3,16 @@
 if ($_POST["action"] == "login") {
 
     if (!isset($_POST["email"]) || !isset($_POST["password"])) {
-        echo "<script>alert('กรุณากรอกข้อมูลให้ครบ')</script>";
+        alert("error", "กรุณากรอกข้อมูลให้ครบ");
     } else {
-
         $check = $db->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
         $check->execute(array(":email" => strtolower($_POST["email"]), ":password" => md5($_POST["password"])));
         $test = $check->fetch(PDO::FETCH_ASSOC);
-
         if ($test) {
             $_SESSION["login"] = $test;
-            echo "<script>alert('ล็อกอินสำเร็จแล้ว')</script>";
-            header( "location: index.php" );
+            alert("success", "ล็อกอินสำเร็จแล้ว", $link);
         } else {
-            echo "<script>alert('อีเมลหรือรหัสผ่านไม่ถูกต้อง')</script>";
+            alert("error", "อีเมลหรือรหัสผ่านไม่ถูกต้อง");
         }
     }
 }
@@ -25,7 +22,7 @@ if ($_POST["action"] == "login") {
 
 <section>
     <!-- Header -->
-    <div class="flex items-center justify-center flex-col">
+    <div class="flex items-center justify-center flex-col mt-[10em]">
         <h1 class="text-4xl font-bold">Login</h1>
     </div>
 

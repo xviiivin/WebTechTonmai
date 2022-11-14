@@ -93,7 +93,7 @@
             <p id="subtotalcartside"><?= number_format($subtotal) ?> ฿</p>
           </div>
           <div class="flex flex-col gap-2 items-center">
-            <button class="bg-black text-white w-full py-0.5">Confirm</button>
+            <button  class="bg-black text-white w-full py-0.5"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
             <a href="<?= $link . "?page=cart" ?>" class="text-sm underline">View Cart</a>
           </div>
         </div>

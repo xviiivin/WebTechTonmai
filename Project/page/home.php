@@ -26,38 +26,25 @@
             <div class="md:block hidden w-full h-full">
                 <div class="swiper mySwiper ">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide relative">
-                            <div class="absolute flex flex-col">
-                                <span class="text-[8rem] -mt-[0.3em] mb-6">Auspicious Tree</span>
-                                <span class="font-medium text-2xl -mt-16 mr-12 text-end">Autumm</span>
-                                <div class="flex justify-center">
-                                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight hover:bg-black hover:text-white" href="#">Shop Now</a>
+                        <?php
+                        $test = $db->prepare("SELECT * FROM category");
+                        $test->execute();
+                        $data = $test->fetchAll();
+                        foreach ($data as $value) {
+                        ?>
+                            <div class="swiper-slide relative">
+                                <div class="absolute flex flex-col">
+                                    <span class="text-[8rem] -mt-[0.3em] mb-6"><?= $value["name"] ?></span>
+                                    <span class="font-medium text-2xl -mt-16 mr-12 text-end">Autumm</span>
+                                    <div class="flex justify-center">
+                                        <a class="transition duration-500 border-black border py-3 px-12 text-extralight hover:bg-black hover:text-white" href="<?= $link."?page=product&categoryid=".$value["id"] ?>">Shop Now</a>
+                                    </div>
                                 </div>
+                                <img draggable="false" src="https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000" alt="" class="">
                             </div>
-                            <img draggable="false" src="https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000" alt="" class="">
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="absolute flex flex-col">
-                                <span class="text-[8rem] -mt-[0.3em] mb-6">Air Purifying Tree</span>
-                                <span class="font-medium text-2xl -mt-16 mr-12 text-end">Summer</span>
-                                <div class="flex justify-center">
-                                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight hover:bg-black hover:text-white" href="#">Shop Now</a>
-                                </div>
-                            </div>
-                            <img draggable="false" src="https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000" alt="" class="">
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="absolute flex flex-col">
-                                <span class="text-[8rem] -mt-[0.3em] mb-6">Easy Care Tree</span>
-                                <span class="font-medium text-2xl -mt-16 mr-12 text-end">Winter</span>
-                                <div class="flex justify-center">
-                                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight hover:bg-black hover:text-white" href="#">Shop Now</a>
-                                </div>
-                            </div>
-                            <img draggable="false" src="https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000" alt="" class="">
-                        </div>
-
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

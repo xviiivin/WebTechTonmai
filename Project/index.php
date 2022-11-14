@@ -5,12 +5,12 @@ session_start();
 error_reporting(1);
 ob_start();
 
-require './include/config.php';
 
 
 if (empty($_SESSION["cart"])) {
     $_SESSION["cart"] = [];
 }
+
 
 
 ?>
@@ -29,6 +29,7 @@ if (empty($_SESSION["cart"])) {
     <link rel="stylesheet" href="./assets/css/fontawesome.css" />
     <title>Ton Mai</title>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <style>
@@ -51,11 +52,14 @@ if (empty($_SESSION["cart"])) {
 
     <div class="sticky z-50">
         <?php
+        require './include/config.php';
+
         include("include/components/navbar.php");
         ?>
     </div>
 
     <?php
+
     if ($_GET["page"] == "") {
         include("page/home.php");
     } else if ($_GET["page"] == "login") {
@@ -97,7 +101,6 @@ if (empty($_SESSION["cart"])) {
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 

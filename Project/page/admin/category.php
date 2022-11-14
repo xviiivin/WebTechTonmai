@@ -6,12 +6,12 @@ if ($_POST["action"] == "addcategory") {
     $test = $check->fetch(PDO::FETCH_ASSOC);
     if ($test) {
         alert("error", "มีชื่อหมวดหมู่อยู่ในระบบแล้ว");
-        header("Refresh:0");
+        header("Refresh:5");
     } else {
         $query1 = $db->prepare("INSERT INTO category (`name`) VALUES (:name)");
         $query1->execute([':name' => ($_POST["name"])]);
         alert("success", "เพิ่มหมวดหมู่เรียบร้อย");
-        header("Refresh:0");
+        header("Refresh:5");
     }
 }
 
@@ -19,7 +19,7 @@ if ($_POST["action"] == "deletecategorywithid") {
     $query1 = $db->prepare("DELETE FROM category WHERE id = :id");
     $query1->execute([":id" => $_POST["id"]]);
     alert("success", "ลบหมวดหมู่สำเร็จ!!!");
-    header("Refresh:0");
+    header("Refresh:5");
 }
 
 
@@ -39,7 +39,7 @@ if ($_POST["action"] == "addproduct") {
             $query1->execute([':name' => ($_POST["name"]), ':price' => ($_POST["price"]), ':size' => ($_POST["size"]), ':watering' => ($_POST["watering"]), ':toolstips' => ($_POST["toolstips"]), ':sunlight' => $_POST["sunlight"], ':basic' => ($_POST["basic"]), ':story' => ($_POST["story"]), ':category' => ($_GET["categoryid"]), ':file_name' => ($newfilename), ':date' => (time())]);
 
             alert("success", "เพิ่มข้อมูลเรียบร้อย");
-            header("Refresh:0");
+            header("Refresh:5");
         } else {
             alert("error", "Sorry, there was an error uploading your file.");
         }
@@ -55,7 +55,7 @@ if ($_POST["action"] == "deleteproduct") {
     $query1 = $db->prepare("DELETE FROM product WHERE id = :id");
     $query1->execute([":id" => $_POST["id"]]);
     alert("success", "ลบสินค้าสำเร็จ!!!");
-    header("Refresh:0");
+    header("Refresh:5");
 }
 
 ?>

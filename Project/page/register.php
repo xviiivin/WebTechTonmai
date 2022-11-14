@@ -4,23 +4,18 @@
 if ($_POST["action"] == "create") {
 
     if (!isset($_POST["firstname"]) || !isset($_POST["lastname"]) || !isset($_POST["email"]) || !isset($_POST["password"])) {
-        echo "<script>alert('กรุณากรอกข้อมูลให้ครบ')</script>";
+        alert("error", "กรุณากรอกข้อมูลให้ครบ");
     } else {
-
-
-
         $check = $db->prepare("SELECT * FROM users WHERE email = :email");
         $check->execute(array(":email" => strtolower($_POST["email"])));
         $test = $check->fetch(PDO::FETCH_ASSOC);
 
         if (!$test) {
-
-           
             $query1 = $db->prepare("INSERT INTO users (`firstname`, `lastname`, `email`, `password`, `rank`) VALUES (:firstname, :lastname, :email, :password, 0)");
             $query1->execute([':firstname' => strtolower($_POST["firstname"]), ':lastname' => strtolower($_POST["lastname"]), ':email' => strtolower($_POST["email"]), ':password' => md5($_POST["password"])]);
-            echo "<script>alert('สมัครสมาชิกสำเร็จ')</script>";
+            alert("success", "ล็อกอินสำเร็จแล้ว", $link."?page=login");
         } else {
-            echo "<script>alert('มีอีเมลนี้อยู่ในระบบแล้ว')</script>";
+            alert("error", "มีอีเมลนี้อยู่ในระบบแล้ว");
         }
     }
 }
@@ -28,7 +23,7 @@ if ($_POST["action"] == "create") {
 ?>
 
 <div>
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 mt-[10em]">
         <div class="flex justify-center	mb-4">
             <p class="text-4xl font-bold">Register</p>
         </div>

@@ -14,15 +14,32 @@ if ($_GET["page"] == "logout") {
     header("location: index.php");
 }
 
-function alert($status, $message)
+function alert($status, $message, $redirect = null)
 {
     if ($status == "success") {
-        echo "<script>alert('" . $message . "')</script>";
+        if ($redirect) {
+            echo "<script>Swal.fire('สำเร็จ!','" . $message . "','success').then((result) => {
+                window.location.href = ".'"'.$redirect.'"'."
+              })</script>";
+        } else {
+            echo "<script>Swal.fire('สำเร็จ!','" . $message . "','success').then((result) => {
+                window.location.href = document.URL
+              })</script>";
+        }
+
+        
     } else if ($status == "error") {
-        echo "<script>alert('" . $message . "')</script>";
+        if ($redirect) {
+            echo "<script>Swal.fire('ผิดพลาด!','" . $message . "','error').then((result) => {
+                window.location.href = ".'"'.$redirect.'"'."
+              })</script>";
+        } else {
+            echo "<script>Swal.fire('ผิดพลาด!','" . $message . "','error').then((result) => {
+                window.location.href = document.URL
+              })</script>";
+        }
     }
 }
-
 
 // $test = $db->prepare('CREATE TABLE users (
 //     id INTEGER PRIMARY KEY,
