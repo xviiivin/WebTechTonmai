@@ -46,6 +46,7 @@ if (empty($_SESSION["cart"])) {
         position: sticky;
         top: 0;
     }
+
 </style>
 
 <body>
@@ -78,6 +79,8 @@ if (empty($_SESSION["cart"])) {
         include("page/checkout.php");
     } else if ($_GET["page"] == "admin") {
         include("page/admin.php");
+    } else if ($_GET["page"] == "search") {
+        include("page/search.php");
     } else {
         include("page/home.php");
     }
