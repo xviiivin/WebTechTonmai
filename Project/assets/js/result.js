@@ -10,10 +10,7 @@ const featured_dropdown_hover = featured_dropdown.from("#featured_dropdown", {
   opacity: 0,
   display: "hidden",
 });
-featured.addEventListener("mouseenter", () => {
-  featured_dropdown_hover.play();
-  console.log("ok");
-});
+featured.addEventListener("mouseenter", () => featured_dropdown_hover.play());
 featured.addEventListener("mouseleave", () =>
   featured_dropdown_hover.reverse()
 );

@@ -13,7 +13,6 @@
     border-radius: 6px;
     padding: 5px 15px 5px 15px;
     position: absolute;
-    z-index: 1;
     top: 150%;
     left: 50%;
     margin-left: -60px;
@@ -41,10 +40,10 @@
 </style>
 
 <!-- Navigator -->
-<nav>
+<nav id="navbar" class="fixed w-full z-10 transition-all duration-300 drop-shadow-md">
   <!-- Nav -->
 
-  <div class="">
+  <div class="bg-white">
     <div id="nav" class="sticky mx-10 lg:mx-24 xl:mx-36">
       <div class="py-10 flex-row flex items-center justify-between">
         <!-- responsive navside md: -->
@@ -225,7 +224,7 @@
   </div>
 
   <!-- Vertical Nav -->
-  <navside id="vertical-nav" class="absolute mx-0 top-0 z-30" aria-label="Sidebar">
+  <navside id="vertical-nav" class="absolute mx-0 top-0 z-20" aria-label="Sidebar">
     <!-- Container -->
     <div class="absolute">
       <div class="flex w-[20em] h-screen flex justify-between">
@@ -269,7 +268,7 @@
   <?php include("cartsidebar.php"); ?>
 
   <!-- Search bar -->
-  <div id="search-bar" class="w-full top-0 absolute hidden z-30">
+  <div id="search-bar" class="w-full top-0 absolute hidden">
     <div class="bg-white md:block hidden">
       <div class="pt-12 pb-6 px-6 lg:px-12 flex-row flex items-center justify-between">
         <div class="px-6 md:block hidden">
@@ -339,5 +338,18 @@
 </nav>
 
 <!-- Fade Background -->
-<div id="fade-bg" class="w-full h-full bg-[#333333] hidden opacity-0 absolute top-0 z-20" onclick="OpenModal('fade-bg')">
+<div id="fade-bg" class="w-full h-full bg-[#333333] hidden opacity-0 absolute top-0 z-10" onclick="OpenModal('fade-bg')">
 </div>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-125px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>

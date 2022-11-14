@@ -1,19 +1,14 @@
-let reccommend_tree = gsap.timeline({
+const asdasd = gsap.timeline({
   paused: true,
   repeat: 0,
 });
-const recommend_tree_dropdown = reccommend_tree.to("#recommend_tree_dropdown", {
+const recommend_tree_dropdown = asdasd.to("#recommend_tree_dropdown", {
   duration: 0.3,
   y: 50,
   ease: "expo-out",
   opacity: 1,
   display: "block",
 });
-// .to("#recommend_tree_dropdown", {
-//   duration: 0.3,
-//   opacity: 1,
-//   display: "block",
-// });
 const recommend_tree_hover = document.getElementById("recommend_tree");
 recommend_tree_hover.addEventListener("mouseenter", () =>
   recommend_tree_dropdown.play()
