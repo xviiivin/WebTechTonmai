@@ -43,7 +43,7 @@
 <nav id="navbar" class=" w-full z-50 transition-all ">
   <!-- Nav -->
 
-  <div class="bg-white drop-shadow-md">
+  <div class="bg-white">
     <div id="nav" class=" mx-10 lg:mx-24 xl:mx-36">
       <div class="py-10 flex-row flex items-center justify-between">
         <!-- responsive navside md: -->
