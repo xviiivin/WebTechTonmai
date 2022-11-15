@@ -121,12 +121,12 @@ if ($_POST["action"] == "deletextocart") {
                                 <p class="mb-3 mt-4 lg:mb-0 text-left sm:hidden"><span class="font-bold">Price : </span><?= $value["price"] ?> ฿</p>
                                 <div class="flex gap-4 justify-start items-center table-cell sm:hidden">
                                     <div class="flex">
-                                        <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-                                        <input id="<?= $value["id"] ?>cartid1" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
                                         <button onclick="cartplusdelete(<?= $value['id'] ?>, 'delete')" class="border-black border-2 py-0.5 px-2">
                                             <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <input id="<?= $value["id"] ?>cartid1" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
+                                        <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                            <i class="fa-solid fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -140,12 +140,12 @@ if ($_POST["action"] == "deletextocart") {
                             <!-- Quantity Responsive -->
                             <div class="flex gap-4 justify-start items-center hidden sm:table-cell lg:hidden">
                                 <div class="flex">
-                                    <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                    <input id="<?= $value["id"] ?>cartid2" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
                                     <button onclick="cartplusdelete(<?= $value['id'] ?>, 'delete')" class="border-black border-2 py-0.5 px-2">
                                         <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input id="<?= $value["id"] ?>cartid2" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
+                                    <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                        <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
@@ -154,12 +154,12 @@ if ($_POST["action"] == "deletextocart") {
                         <td class="hidden lg:table-cell">
                             <div class="flex gap-4 justify-start items-center">
                                 <div class="flex">
-                                    <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                    <input id="<?= $value["id"] ?>cartid3" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
                                     <button onclick="cartplusdelete(<?= $value['id'] ?>, 'delete')" class="border-black border-2 py-0.5 px-2">
                                         <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input id="<?= $value["id"] ?>cartid3" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
+                                    <button onclick="cartplusdelete(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                        <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
@@ -280,12 +280,12 @@ if ($_POST["action"] == "deletextocart") {
                         </div>
                         <div class="flex gap-4 justify-start items-center">
                             <div class="flex">
-                                <button onclick="cartplusdelete(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
                                 <button onclick="cartplusdelete(${fewzahaha['id']}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                     <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                                <button onclick="cartplusdelete(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                    <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
                             <div class="">
@@ -309,12 +309,12 @@ if ($_POST["action"] == "deletextocart") {
                         <p class="mb-3 mt-4 lg:mb-0 text-left sm:hidden"><span class="font-bold">Price : </span>${fewzahaha["price"]} ฿</p>
                         <div class="flex gap-4 justify-start items-center table-cell sm:hidden">
                             <div class="flex">
-                                <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                                <input id="${fewzahaha["id"]}cartid1" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
                                 <button onclick="cartplusdelete(${fewzahaha["id"]}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                     <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input id="${fewzahaha["id"]}cartid1" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                                <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                    <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
                         </div>
@@ -325,12 +325,12 @@ if ($_POST["action"] == "deletextocart") {
                     <p class="mb-3 lg:mb-0 text-center lg:text-left hidden sm:block">${fewzahaha["price"]} ฿</p>
                     <div class="flex gap-4 justify-start items-center hidden sm:table-cell lg:hidden">
                         <div class="flex">
-                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <input id="${fewzahaha["id"]}cartid2" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
                             <button onclick="cartplusdelete(${fewzahaha["id"]}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                 <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <input id="${fewzahaha["id"]}cartid2" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -338,12 +338,12 @@ if ($_POST["action"] == "deletextocart") {
                 <td class="hidden lg:table-cell">
                     <div class="flex gap-4 justify-start items-center">
                         <div class="flex">
-                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <input id="${fewzahaha["id"]}cartid3" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
                             <button onclick="cartplusdelete(${fewzahaha["id"]}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                 <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <input id="${fewzahaha["id"]}cartid3" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
                     </div>

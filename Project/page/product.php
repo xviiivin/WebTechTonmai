@@ -101,12 +101,12 @@ if (isset($_GET["id"])) {
                 <div class="flex text-lg justify-between">
                   <p>Amount</p>
                   <div class="flex">
-                    <button onclick="cartplusdelete('add')" class="border-black border-2 py-1 px-3 bg-black text-white">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                    <input class="border-black border-y-2 py-1 text-center w-14 focus:outline-0" min="1" name="cartid" id="cartid" value="1">
                     <button onclick="cartplusdelete('delete')" class="border-black border-2 py-1 px-3">
                       <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input class="border-black border-y-2 py-1 text-center w-14 focus:outline-0" min="1" name="cartid" id="cartid" value="1">
+                    <button onclick="cartplusdelete('add')" class="border-black border-2 py-1 px-3 bg-black text-white">
+                      <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
                 </div>

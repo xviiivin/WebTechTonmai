@@ -50,12 +50,12 @@
                     </div>
                     <div class="flex gap-4 justify-start items-center">
                       <div class="flex">
-                        <button onclick="cartplusdelete1(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                        <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
                         <button onclick="cartplusdelete1(<?= $value['id'] ?>, 'delete')" class="border-black border-2 py-0.5 px-2">
                           <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="<?= $value["count"] ?>">
+                        <button onclick="cartplusdelete1(<?= $value['id'] ?>, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                          <i class="fa-solid fa-plus"></i>
                         </button>
                       </div>
                       <div class="">

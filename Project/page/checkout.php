@@ -137,7 +137,7 @@
                     </div>
                 </div>
 
-                <input type="text" name="action" value="checkout">
+                <input type="text" name="action" value="checkout" class="hidden">
             </div>
         </form>
 
