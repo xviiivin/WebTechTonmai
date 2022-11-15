@@ -113,7 +113,7 @@
 
             <div class="">
 
-                <a class="mt-3 text-lg w-4/6 text-center bg-black text-white  px-6 py-2 block hover:scale-105 " href="Address.html">
+                <a class="mt-3 text-lg w-4/6 text-center bg-black text-white px-6 py-2 block hover:scale-105 " href="Address.html">
                     View Address
                 </a>
 

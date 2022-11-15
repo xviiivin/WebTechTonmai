@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <a class="mt-[50px] text-center bg-black text-white w-1/12 px-6 py-2 block hover:scale-105 " href="Edit.html">
+            <a class="mt-[50px] text-center bg-black text-white block hover:scale-105 w-20 pl-6 pr-6 pt-2 pb-2" href="Edit.html">
                 Edit
             </a>
         </div>

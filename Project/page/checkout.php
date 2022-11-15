@@ -101,7 +101,7 @@
             <div class="grid gap-y-5">
                 <div class="flex justify-start text-sm text-gray-500">
                     <!-- nav button-->
-                    <a href="#" class="">Cart&nbsp;&nbsp;</a>
+                    <a href="<?= $link . "?page=cart" ?>" class="">Cart&nbsp;&nbsp;</a>
                     <svg xmlns="http://www.w3.org/2000/svg" class="mt-[2px]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -119,7 +119,7 @@
                 <textarea type="text" name="address" placeholder="Address *" required class="h-40 rounded-md border-2 border-[#C0B6B6] p-3"></textarea>
                 <div class="grid grid-cols-1 lg:mt-20 lg:grid-cols-2">
                     <div>
-                        <a href="#" class="invisible lg:visible">
+                        <a href="<?= $link ?>" class="invisible lg:visible">
                             <i class="fa-sharp fa-solid fa-angle-left fa-lg"></i>
                             <span class="text-xl p-4">back to home page</span>
                         </a>
@@ -129,7 +129,7 @@
                             <button type="submit" class="bg-black text-white rounded-md border-2 p-3 w-full lg:w-60">Confirm</button>
                         </div>
                         <div class="flex justify-center">
-                            <a href="#" class="visible lg:invisible lg:p-0 pt-2">
+                            <a href="<?= $link ?>" class="visible lg:invisible lg:p-0 pt-2">
                                 <i class="fa-sharp fa-solid fa-angle-left fa-lg"></i>
                                 <span class="text-xl p-4">back to home page</span>
                             </a>

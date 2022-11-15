@@ -83,7 +83,7 @@ if ($_POST["action"] == "deletextocart") {
         <h1 class="text-4xl font-bold flex justify-center">Shopping Cart</h1>
         <div class="flex justify-center mt-4 text-md text-gray-500">
             <!-- to home button-->
-            <a href="#" class="hover:text-black">Home&nbsp;&nbsp;</a>
+            <a href="<?= $link ?>" class="hover:text-black">Home&nbsp;&nbsp;</a>
             <svg xmlns="http://www.w3.org/2000/svg" class="mt-[6px]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>

@@ -1,5 +1,5 @@
 <section>
-    <footer class="bg-black text-left mt-8">
+    <footer class="bg-black text-left mt-24">
         <div class="container p-9 mx-auto">
             <div class="flex justify-between grid-cols-2 md:grid md:grid-cols-3">
                 <!-- <div class="mb-6">

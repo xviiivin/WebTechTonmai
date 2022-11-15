@@ -52,49 +52,46 @@ if (empty($_SESSION["cart"])) {
 
   <div id="navbar_hidden" class="sticky z-50 transition-all duration-500">
     <?php
-    require './include/config.php';
+    if ($_GET["page"] != "checkout") {
+      require './include/config.php';
 
-    include("include/components/navbar.php");
+      include("include/components/navbar.php");
+    }
     ?>
   </div>
 
   <?php
   if ($_GET["page"] == "") {
     include("page/home.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "login") {
     include("page/login.php");
-    include("include/components/footer.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "account") {
     include("page/account/index.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "address") {
     include("page/account/address.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "register") {
     include("page/register.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "cart") {
     include("page/cart.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "product") {
     include("page/product.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "checkout") {
     include("page/checkout.php");
   } else if ($_GET["page"] == "admin") {
     include("page/admin.php");
-    include("include/components/footer.php");
   } else if ($_GET["page"] == "search") {
     include("page/search.php");
-    include("include/components/footer.php");
   } else {
     include("page/home.php");
-    include("include/components/footer.php");
   }
   ?>
   <!-- footer -->
+
+  <?php
+  if ($_GET["page"] != "checkout") {
+    include("include/components/footer.php");
+  }
+  ?>
 </body>
 
 <script src="./assets/js/gsap.min.js"></script>
