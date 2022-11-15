@@ -240,24 +240,42 @@
                 <i class="fa-sharp fa-solid fa-angle-right"></i>
               </div>
               <div id="type-tree-dropdown" class="ml-3">
-                <ul>
+                <!-- <ul>
                   <li class="p-3 hover:bg-gray-200 transition-all">Auspicious Tree</li>
                   <li class="p-3 hover:bg-gray-200 transition-all">Air Purifying Tree</li>
                   <li class="p-3 hover:bg-gray-200 transition-all">Easy Care Plants</li>
                   <li class="p-3 hover:bg-gray-200 transition-all">Flowering trees</li>
                   <li class="p-3 hover:bg-gray-200 transition-all">Tropical trees</li>
+                </ul> -->
+                <ul>
+                  <?php
+                  $querycategory = $db->prepare("SELECT * FROM `category`");
+                  $querycategory->execute();
+                  $category = $querycategory->fetchAll();
+                  foreach ($category as $value) {
+                  ?>
+                    <li>
+                      <a class="p-3 w-[12em] block hover:bg-gray-200 hover:text-black hover:bg-gray-200 duration-500 text-gray-500" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">
+                        <?= $value["name"] ?>
+                      </a>
+                    </li>
+                  <?php
+                  }
+                  ?>
+
+
                 </ul>
               </div>
             </li>
             <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
-              <a href="#">Recommend</a>
+              <a href="#recommendedhome">Recommend</a>
             </li>
           </ul>
           <!-- Auth -->
           <div class="flex flex-col md:hidden block py-6 px-3 mb-6">
             <label class="text-xl" for="">My Account</label>
-            <a class="bg-black text-white mt-3 py-2 text-center" href="#">Login</a>
-            <a class="border-[2px] border-black py-1 mt-3 text-center" href="#">Register</a>
+            <a class="bg-black text-white mt-3 py-2 text-center" href="<?= isset($_SESSION["login"]) ? $link . "?page=account" : $link . "?page=login" ?>">Login</a>
+            <a class="border-[2px] border-black py-1 mt-3 text-center" href="<?= isset($_SESSION["register"]) ? $link . "?page=account" : $link . "?page=register" ?>">Register</a>
           </div>
         </div>
       </div>
