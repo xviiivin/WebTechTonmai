@@ -15,7 +15,7 @@ if ($_SESSION["login"]["rank"] == 0) {
                 <a href="<?= $link . "?page=admin&adminpage=home" ?>" class="text-lg">Category</a>
             </div>
             <div>
-                <a href="<?= $link . "?page=address" ?>" class="text-base -mt-2 text-[#666666] hover:text-black">History</a>
+                <a href="<?= $link . "?page=admin&adminpage=history" ?>" class="text-base -mt-2 text-[#666666] hover:text-black">History</a>
             </div>
             <div>
                 <a href="<?= $link . "?page=logout" ?>" class="text-base text-[#666666] hover:text-black">Log Out</a>
@@ -29,12 +29,16 @@ if ($_SESSION["login"]["rank"] == 0) {
 
                 if ($_GET["adminpage"] == "category") {
                     include("admin/category.php");
+                } else if ($_GET["adminpage"] == "history") {
+                    include("admin/history.php");
                 } else {
                     include("admin/category.php");
                 }
 
 
             ?>
+
+
 
 
         </div>

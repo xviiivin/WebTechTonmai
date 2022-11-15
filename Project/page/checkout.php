@@ -1,7 +1,6 @@
 <?php
     if ($_POST["action"] == "checkout") {
         $subtotal = 0;
-
         if (count($_SESSION["cart"]) == 0) {
             alert("error", "ไม่มีสินค้าในตระกร้า", $link);
         } else {
@@ -12,8 +11,6 @@
             $query1->execute([':iduser' => $_SESSION["login"]["id"], ':product' => json_encode($_SESSION["cart"]), ':price' => $subtotal + 40, ':date' => time()]);
             alert("success", "กดสั่งซื้อสินค้าเรียบร้อยแล้ว", $link);
         }
-
-       
     }
 ?>
 
