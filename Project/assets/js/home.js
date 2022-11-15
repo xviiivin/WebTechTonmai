@@ -1,8 +1,8 @@
-const asdasd = gsap.timeline({
+const songdang = gsap.timeline({
   paused: true,
   repeat: 0,
 });
-const recommend_tree_dropdown = asdasd.to("#recommend_tree_dropdown", {
+const recommend_tree_dropdown = songdang.to("#recommend_tree_dropdown", {
   duration: 0.3,
   y: 50,
   ease: "expo-out",

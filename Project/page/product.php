@@ -58,37 +58,44 @@ if (isset($_GET["id"])) {
 
 ?>
   <div id="detail">
-    <div class="sm:mx-6 md:mx-10 lg:mx-32 xl:mx-44 2xl:mx-72">
+    <div class="lg:mx-12 xl:mx-44 2xl:mx-72">
 
       <!-- Example Items -->
       <section>
         <div class="my-6 flex justify-center">
-          <div class="w-full sm:w-fit grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="w-full sm:w-fit flex flex-col lg:flex-row gap-12">
 
             <!-- imgage -->
-            <div class="minw-min">
-              <div class="flex justify-center">
-                <div>
-                  <div>
-                    <img class="w-11/12 h-11/12" src="uploads/<?= $category["file_name"] ?>" alt="">
-                  </div>
-
-                </div>
+            <div class="">
+              <div style="width: 500px; height: 500px">
+                <img class="w-full h-full rounded" src="uploads/<?= $category["file_name"] ?>" alt="">
               </div>
             </div>
 
             <!-- amount -->
-            <div class="mx-3">
+            <div class="mx-3l w-[500px]">
               <h1 class="text-4xl"><?= $category["name"] ?></h1>
+              <h3 class="text-gray-500">
+                <?php
+                $asd = $category["category"];
+                $teet =  implode($db->query("SELECT name FROM category WHERE id = $asd")->fetch(PDO::FETCH_ASSOC));
+
+                echo $teet;
+                ?>
+              </h3>
               <div class="ml-6 mt-6">
-                <p class="text-xl"><?= number_format($category["price"]) ?> ฿</p>
+                <p class="text-4xl"><?= number_format((float)$category["price"], 2, ".", "") ?> ฿</p>
               </div>
-              <hr class="mt-6">
+              <hr class="mt-3">
               <hr />
-              <div class="mt-6 w-full grid grid-cols-1 gap-2">
+              <div class="mt-3 w-full grid grid-cols-1 gap-2">
                 <div class="flex text-lg justify-between">
                   <p>Size</p>
                   <p><?= $category["size"] ?> cm</p>
+                </div>
+                <div class="flex text-lg justify-between">
+                  <span>Remaining</span>
+                  <span>1 pieces</span>
                 </div>
 
                 <div class="flex text-lg justify-between">
@@ -140,7 +147,7 @@ if (isset($_GET["id"])) {
               <div id="watering">
                 <div class="flex p-3">
                   <div class="w-[4em] flex align-bottom gap-4">
-                    <img src="./../../img/water.png" alt="">
+                    <img src="img/water.png" alt="">
                     <h5>Watering</h5>
                   </div>
                 </div>
@@ -155,7 +162,7 @@ if (isset($_GET["id"])) {
               <div id="sunlight">
                 <div class="flex p-3">
                   <div class="w-[4em] flex align-bottom gap-4">
-                    <img src="./../../img/sunlight.png" alt="">
+                    <img src="img/sunlight.png" alt="">
                     <h5>Sunlight</h5>
                   </div>
                 </div>
@@ -171,14 +178,16 @@ if (isset($_GET["id"])) {
               <div id="tools-tips" class="mt-3">
                 <p class="text-lg">Tools tips</p>
                 <ul class="list-decimal flex flex-col gap-4 mt-6" style="padding-inline-start: 60px">
-                  <?=
-                  $category["toolstips"]
-                  ?>
+                  <li>
+                    <?=
+                    $category["toolstips"]
+                    ?>
+                  </li>
                 </ul>
               </div>
               <!-- basic information -->
               <div id="basic-information">
-                <div class="w-full bg-gray-100 rounded-md">
+                <div class="w-full bg-gray-100 rounded-md mt-3">
                   <div class="p-6">
                     <header>Basic information</header>
                     <div class="m-2">
@@ -208,66 +217,7 @@ if (isset($_GET["id"])) {
       </section>
     </div>
 
-    <!-- Popular -->
-    <section>
-      <div class=" w-screen my-12">
 
-        <!-- header -->
-        <div class="flex justify-center">
-          <h3 class="text-3xl font-light">Recommend</h3>
-        </div>
-
-        <!-- items -->
-        <div id="items" class="mt-3 flex p-3 h-96 overflow-x-auto">
-          <div class="flex">
-            <div class="w-96 mb-6 mr-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 1</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-            <div class="w-96 mb-6 mr-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 2</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-            <div class="w-96 mb-6 mr-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 3</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-            <div class="w-96 mb-6 mr-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 4</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-            <div class="w-96 mb-6 mr-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 4</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-            <div class="w-96 mb-6">
-              <div class="bg-gray-100 w-full h-full"></div>
-              <div class="flex justify-between text-lg mt-2">
-                <p>Tonmai 4</p>
-                <!-- <p>120$</p> -->
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
   </div>
 
   <script>
@@ -329,28 +279,29 @@ if (isset($_GET["id"])) {
           <p class="text-black"><?= $categoryid["name"] ?></p>
         </div>
       </div>
+
       <!-- item windows -->
       <div class="p-3">
         <div class="flex justify-start py-6 inline-block">
           <!-- <div id="featured">
-                        <div class="flex items-center gap-2">
-                            <span>Featured</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </div>
-                        <div id="featured_dropdown" class="absolute p-3 drop-shadow-xl bg-white">
-                            <ul>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Featured</li>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Best selling</li>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Alphabetically, A-Z</li>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Alphabetically, Z-A</li>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Price, low to high</li>
-                                <li class="py-1 text-gray-500 hover:text-black transition-all">Price, high to low</li>
-                            </ul>
-                        </div>
-                        </divid>
-                    </div> -->
+            <div class="flex items-center gap-2">
+              <span>Featured</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div id="featured_dropdown" class="absolute p-3 drop-shadow-xl bg-white">
+              <ul>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Featured</li>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Best selling</li>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Alphabetically, A-Z</li>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Alphabetically, Z-A</li>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Price, low to high</li>
+                <li class="py-1 text-gray-500 hover:text-black transition-all">Price, high to low</li>
+              </ul>
+            </div>
+            </divid>
+          </div> -->
         </div>
 
         <!-- items -->

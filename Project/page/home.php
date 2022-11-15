@@ -81,7 +81,7 @@
 
       <!-- header -->
       <div class="flex justify-center">
-        <h3 class="text-4xl font-bold">Popular</h3>
+        <h3 class="text-4xl font-bold">New Item Arrived</h3>
       </div>
 
       <!-- items -->
@@ -168,31 +168,30 @@
         <h3 class="text-3xl font-light mr-3">All Product</h3>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex justify-center mx-44 ">
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4 mx-6">
 
 
           <?php
-          $test = $db->prepare("SELECT * FROM product INNER JOIN category ON category.id = product.category ORDER BY id DESC LIMIT 9");
+          $test = $db->prepare("SELECT * FROM product INNER JOIN category ON category.id = product.category ORDER BY id DESC LIMIT 15");
           $test->execute();
           $data = $test->fetchAll();
 
           foreach ($data as $value) {
           ?>
 
-            <div class="flex bg-gray-200 rounded max-w-sm">
-              <div class="p-4">
-
-                <img class="rounded-lg w-24 h-24 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
+            <div class="flex bg-gray-200 rounded-lg">
+              <div class="p-3 w-1/3">
+                <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
               </div>
-              <div class="flex flex-col justify-between py-2 px-3">
+              <div class="flex flex-col justify-between py-2 px-3 w-2/3">
                 <div>
-                  <h5 class=""><?= $value[1] ?></h5>
+                  <h5 class="text-lg"><?= $value[1] ?></h5>
                   <label class="text-gray-400 text-sm"><?= $value["name"] ?> </label>
                 </div>
                 <div class="flex justify-between items-center">
-                  <p><?= number_format($value["price"]) ?> ฿</p>
-                  <i class="fa-regular fa-square-plus"></i>
+                  <p class="text-lg"><?= number_format((float)$value["price"], 2, ".", "") ?> ฿</p>
+                  <i class="fa-regular fa-square-plus h-5"></i>
                 </div>
               </div>
             </div>

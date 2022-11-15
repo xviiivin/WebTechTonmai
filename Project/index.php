@@ -59,7 +59,6 @@ if (empty($_SESSION["cart"])) {
   </div>
 
   <?php
-
   if ($_GET["page"] == "") {
     include("page/home.php");
   } else if ($_GET["page"] == "login") {
@@ -84,7 +83,7 @@ if (empty($_SESSION["cart"])) {
     include("page/home.php");
   }
   ?>
-  <div class="w-fill h-[50vh] bg-black flex justify-center items-center text-center text-white">
+  <div class="mt-12 w-fill h-[50vh] bg-black flex justify-center items-center text-center text-white">
     footer
   </div>
 </body>

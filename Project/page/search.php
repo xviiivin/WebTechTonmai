@@ -6,14 +6,14 @@ if (empty($_GET["keyword"])) {
 }
 
 $_GET["number"] = empty($_GET["number"]) ? 1 : $_GET["number"];
-$pageza = ($_GET["number"] - 1) * 24;
+$pageza = ($_GET["number"] - 1) * 16;
 
 
 $query1 = $db->prepare('SELECT * FROM product WHERE name LIKE :keywords');
 $query1->execute([":keywords" => '%' . $_GET["keyword"] . '%']);
 $count = count($query1->fetchAll());
 
-$query = $db->prepare('SELECT * FROM product WHERE name LIKE :keywords LIMIT 24 OFFSET :page');
+$query = $db->prepare('SELECT * FROM product WHERE name LIKE :keywords LIMIT 16 OFFSET :page');
 $query->execute([":keywords" => '%' . $_GET["keyword"] . '%', ':page' => $pageza]);
 $data = $query->fetchAll();
 
@@ -39,8 +39,18 @@ error_reporting(E_ALL);
         <p class="text-black">Search results: "<?= $_GET["keyword"] ?>"</p>
       </div>
     </div>
-
-    <div class="mt-[5em]">
+    <?php
+    if ($count == 0) {
+    ?>
+      <div class="flex justify-center text-center items-center text-2xl m-12 py-24">
+        <span>There no product found :(</span>
+      </div>
+    <?php
+    }
+    ?>
+    <div class="mt-[5em] <?php if ($count == 0) {
+                            echo "hidden";
+                          } ?>">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <?php
         foreach ($data as $value) {
@@ -64,7 +74,7 @@ error_reporting(E_ALL);
                   </span>
                 </div>
                 <div>
-                  <span class=""><?= number_format($value["price"]) ?> ฿</span>
+                  <span class=""><?= number_format((float)$value["price"], 2, '.', "") ?> ฿</span>
                 </div>
               </div>
             </div>
