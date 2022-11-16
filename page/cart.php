@@ -207,7 +207,7 @@ if ($_POST["action"] == "deletextocart") {
                 </div>
                 <div class="flex flex-col gap-2 items-center">
 
-                    <button class="bg-black text-white w-full py-0.5"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
+                    <button class="bg-black text-white w-full py-1 rounded"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
 
                 </div>
             </div>
