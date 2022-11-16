@@ -93,7 +93,7 @@
             <p id="subtotalcartside"><?= number_format($subtotal) ?> ฿</p>
           </div>
           <div class="flex flex-col gap-2 items-center">
-            <button  class="bg-black text-white w-full py-0.5"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
+            <button class="bg-black text-white w-full py-0.5"><a href="<?= $link . "?page=checkout" ?>">Confirm</a> </button>
             <a href="<?= $link . "?page=cart" ?>" class="text-sm underline">View Cart</a>
           </div>
         </div>
@@ -173,13 +173,14 @@
                         </div>
                         <div class="flex gap-4 justify-start items-center">
                             <div class="flex">
-                                <button onclick="cartplusdelete1(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
                                 <button onclick="cartplusdelete1(${fewzahaha['id']}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
+                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                                <button onclick="cartplusdelete1(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+
                             </div>
                             <div class="">
                                 <button onclick="removeproduct1(${fewzahaha['id']})" class="text-gray-500 text-sm underline">Remove</button>
@@ -202,17 +203,16 @@
                         <p class="mb-3 mt-4 lg:mb-0 text-left sm:hidden"><span class="font-bold">Price : </span>${fewzahaha["price"]} ฿</p>
                         <div class="flex gap-4 justify-start items-center table-cell sm:hidden">
                             <div class="flex">
-                                <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                                <input id="${fewzahaha["id"]}cartid1" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
-                                <button onclick="cartplusdelete(${fewzahaha["id"]}, 'delete')" class="border-black border-2 py-0.5 px-2">
+                            <button onclick="cartplusdelete1(${fewzahaha['id']}, 'delete')" class="border-black border-2 py-0.5 px-2">
                                     <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                                <button onclick="cartplusdelete1(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                    <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-
                 </td>
                 <td>
                     <p class="mb-3 lg:mb-0 text-center lg:text-left hidden sm:block">${fewzahaha["price"]} ฿</p>
@@ -231,13 +231,13 @@
                 <td class="hidden lg:table-cell">
                     <div class="flex gap-4 justify-start items-center">
                         <div class="flex">
-                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <input id="${fewzahaha["id"]}cartid3" readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
-                            <button onclick="cartplusdelete(${fewzahaha["id"]}, 'delete')" class="border-black border-2 py-0.5 px-2">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
+                        <button onclick="cartplusdelete1(${fewzahaha['id']}, 'delete')" class="border-black border-2 py-0.5 px-2">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input readonly class="border-black border-y-2 py-0.5 w-14 text-center focus:outline-0 text-sm" value="${fewzahaha["count"]}">
+                                <button onclick="cartplusdelete1(${fewzahaha['id']}, 'add')" class="border-black border-2 py-0.5 px-2 bg-black text-white">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
                         </div>
                     </div>
                 </td>

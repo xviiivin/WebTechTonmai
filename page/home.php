@@ -37,10 +37,10 @@
                   <span class="text-[8rem] -mt-[0.3em] mb-6"><?= $value["name"] ?></span>
                   <!-- <span class="font-medium text-2xl -mt-16 mr-12 text-end">Autumm</span> -->
                   <div class="flex justify-center">
-                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight hover:bg-black hover:text-white" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
+                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight bg-black text-white" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
                   </div>
                 </div>
-                <img class="" draggable="false" src="https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000" alt="" class="">
+                <img class="" draggable="false" src="img/banner/<?= $value["img"] ?>" alt="" class="">
               </div>
             <?php
             }
@@ -180,7 +180,7 @@
           foreach ($data as $value) {
           ?>
 
-            <div class="flex bg-gray-200 rounded-lg">
+            <a class="flex bg-gray-200 rounded-lg" href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
               <div class="p-3 w-1/3">
                 <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
               </div>
@@ -194,7 +194,7 @@
                   <i class="fa-regular fa-square-plus h-5"></i>
                 </div>
               </div>
-            </div>
+            </a>
           <?php
           }
           ?>
