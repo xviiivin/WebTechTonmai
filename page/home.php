@@ -84,22 +84,25 @@
         <h3 class="text-4xl font-bold">New Item Arrived</h3>
       </div>
 
+
+
       <!-- items -->
       <div class="mt-12 mx-3">
         <div class="swiper mySwiper2">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/demo_tree.png" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/demo_tree.png" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/demo_tree.png" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/demo_tree.png" alt="">
-            </div>
+            <?php
+            $test = $db->prepare("SELECT * FROM product INNER JOIN category ON category.id = product.category ORDER BY id DESC LIMIT 15");
+            $test->execute();
+            $data = $test->fetchAll();
+
+            foreach ($data as $value) {
+            ?>
+              <a class="swiper-slide" href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
+                <img src="./uploads/<?= $value["file_name"] ?>" alt="">
+              </a>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -179,19 +182,20 @@
 
           foreach ($data as $value) {
           ?>
-
-            <a class="flex bg-gray-200 rounded-lg" href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
-              <div class="p-3 w-1/3">
-                <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
-              </div>
-              <div class="flex flex-col justify-between py-2 px-3 w-2/3">
-                <div>
-                  <h5 class="text-lg"><?= $value[1] ?></h5>
-                  <label class="text-gray-400 text-sm"><?= $value["name"] ?> </label>
+            <a href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
+              <div class="flex bg-gray-200 rounded-lg">
+                <div class="p-3 w-1/3">
+                  <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
                 </div>
-                <div class="flex justify-between items-center">
-                  <p class="text-lg"><?= number_format((float)$value["price"], 2, ".", "") ?> ฿</p>
-                  <i class="fa-regular fa-square-plus h-5"></i>
+                <div class="flex flex-col justify-between py-2 px-3 w-2/3">
+                  <div>
+                    <h5 class="text-lg"><?= $value[1] ?></h5>
+                    <label class="text-gray-400 text-sm"><?= $value["name"] ?> </label>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <p class="text-lg"><?= number_format((float)$value["price"], 2, ".", "") ?> ฿</p>
+                    <i class="fa-regular fa-square-plus h-5"></i>
+                  </div>
                 </div>
               </div>
             </a>
