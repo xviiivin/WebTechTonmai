@@ -36,16 +36,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             First Name
                         </div>
-                        <div id="fName">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["firstname"] != null) {
-                                    echo $_SESSION["login"]["firstname"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="fName" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["firstname"] != null) {
+                                echo $_SESSION["login"]["firstname"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -53,16 +51,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Last Name
                         </div>
-                        <div id="lName">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["lastname"] != null) {
-                                    echo $_SESSION["login"]["lastname"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="lName" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["lastname"] != null) {
+                                echo $_SESSION["login"]["lastname"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -71,16 +67,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Company
                         </div>
-                        <div id="Company">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["company"] != null) {
-                                    echo $_SESSION["login"]["company"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="Company" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["company"] != null) {
+                                echo $_SESSION["login"]["company"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -88,16 +82,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Address
                         </div>
-                        <div id="Address">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["address"] != null) {
-                                    echo $_SESSION["login"]["address"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="Address" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["address"] != null) {
+                                echo $_SESSION["login"]["address"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -106,16 +98,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Country
                         </div>
-                        <div id="Country">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["country"] != null) {
-                                    echo $_SESSION["login"]["country"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="Country" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["country"] != null) {
+                                echo $_SESSION["login"]["country"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -123,16 +113,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Postal/Zip code
                         </div>
-                        <div id="Zip">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["zipcode"] != null) {
-                                    echo $_SESSION["login"]["zipcode"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="Zip" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["zipcode"] != null) {
+                                echo $_SESSION["login"]["zipcode"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -140,16 +128,14 @@ if ($_POST["action"] == "create") {
                         <div class="w-1/3">
                             Phone
                         </div>
-                        <div id="Phone">
-                            <div class="w-2/3">
-                                <?php
-                                if ($_SESSION["login"]["phone"] != null) {
-                                    echo $_SESSION["login"]["phone"];
-                                } else {
-                                    echo "-";
-                                }
-                                ?>
-                            </div>
+                        <div id="Phone" class="w-2/3">
+                            <?php
+                            if ($_SESSION["login"]["phone"] != null) {
+                                echo $_SESSION["login"]["phone"];
+                            } else {
+                                echo "-";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -171,13 +157,13 @@ if ($_POST["action"] == "create") {
     btn.addEventListener('click', function() {
         if (state) {
             state = false;
-            fName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='firstname' value=<?= $_SESSION["login"]["firstname"] ?>>"
-            lName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='lastname' value=<?= $_SESSION["login"]["lastname"] ?>>"
-            Company.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='company' value=<?= $_SESSION["login"]["company"] ?>>"
-            Address.innerHTML = "<textarea type='text' class='rounded-md border-2 border-gray-500' name='address'><?= $_SESSION["login"]["address"] ?></textarea>"
-            Country.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='country' value=<?= $_SESSION["login"]["country"] ?>>"
-            Zip.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500' name='zipcode' value=<?= $_SESSION["login"]["zipcode"] ?>>"
-            Phone.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500' name='phone' value=<?= $_SESSION["login"]["phone"] ?>>"
+            fName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='firstname' value=<?= $_SESSION["login"]["firstname"] ?>>"
+            lName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='lastname' value=<?= $_SESSION["login"]["lastname"] ?>>"
+            Company.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='company' value=<?= $_SESSION["login"]["company"] ?>>"
+            Address.innerHTML = "<textarea type='text' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='address'><?= $_SESSION["login"]["address"] ?></textarea>"
+            Country.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='country' value=<?= $_SESSION["login"]["country"] ?>>"
+            Zip.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='zipcode' value=<?= $_SESSION["login"]["zipcode"] ?>>"
+            Phone.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500 pr-40 pl-2' name='phone' value=<?= $_SESSION["login"]["phone"] ?>>"
             QEdit.innerHTML = '<button id="Edit" type="submit" class="mt-[50px] text-center bg-black text-white block hover:scale-105 w-32 pl-6 pr-6 pt-2 pb-2">Confirm</button>'
 
         } else {

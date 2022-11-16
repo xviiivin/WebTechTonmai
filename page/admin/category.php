@@ -251,10 +251,10 @@
                             <span class="text-center">
                                 เพิ่มหมวดหมู่สินค้า
                             </span>
-                            <input type="text" name="name" placeholder="ชื่อหมวดหมู่" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                            <input type="text" name="img" placeholder="รูปภาพ" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                            <input type="text" name="name" placeholder="ชื่อหมวดหมู่" class="w-4/5 text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                            <input type="text" name="img" placeholder="รูปภาพ" class="w-4/5 text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
                             <input type="text" name="action" value="addcategory" style="display: none;" placeholder="ชื่อหมวดหมู่" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                            <button type="submit" class="  mt-4 px-11 w-full py-1 text-center rounded-md border-2 bg-black text-white">เพิ่มรายการ</button>
+                            <button type="submit" class="mt-4 px-11 w-full py-1 text-center rounded-md border-2 bg-black text-white">เพิ่มรายการ</button>
                         </form>
                     </center>
                 </div>

@@ -268,7 +268,7 @@
               </div>
             </li>
             <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
-              <a href="#recommendedhome">Recommend</a>
+              <a href="<?= $link ?>#recommendedhome">Recommend</a>
             </li>
           </ul>
           <!-- Auth -->

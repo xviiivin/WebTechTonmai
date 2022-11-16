@@ -6,7 +6,7 @@ require './include/config.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
@@ -38,7 +38,7 @@ require './include/config.php';
   }
 </style>
 
-<body>
+<body class="h-full">
 
   <div id="navbar_hidden" class="sticky z-50 transition-all duration-500">
     <?php
