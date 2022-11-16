@@ -16,6 +16,8 @@
     height: 100%;
     object-fit: cover;
   }
+
+
 </style>
 <!-- Home -->
 <div id="content">
@@ -34,14 +36,16 @@
             ?>
               <div class="swiper-slide relative">
                 <div class="absolute flex flex-col">
-                  <span class="text-[8rem] -mt-[0.3em] mb-6"><?= $value["name"] ?></span>
+                  <div class='border-white mb-5'>
+                  <span class="text-[8rem] -mt-[0.3em] mb-6"><?= $value["name"] ?></span></div>
                   <!-- <span class="font-medium text-2xl -mt-16 mr-12 text-end">Autumm</span> -->
                   <div class="flex justify-center">
-                    <a class="transition duration-500 border-black border py-3 px-12 text-extralight bg-black text-white" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
+                    <a class="transition duration-500 border-black border py-3 px-12 text-black bg-transparent hover:bg-black hover:text-white" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
                   </div>
                 </div>
-                <img class="" draggable="false" src="img/banner/<?= $value["img"] ?>" alt="" class="">
-              </div>
+              
+                <img  class='opacity-50 z-[-1]' draggable="false" src="img/banner/<?= $value["img"] ?>" alt="" class=""></div>
+          
             <?php
             }
             ?>
@@ -84,25 +88,22 @@
         <h3 class="text-4xl font-bold">New Item Arrived</h3>
       </div>
 
-
-
       <!-- items -->
       <div class="mt-12 mx-3">
         <div class="swiper mySwiper2">
           <div class="swiper-wrapper">
-            <?php
-            $test = $db->prepare("SELECT * FROM product INNER JOIN category ON category.id = product.category ORDER BY id DESC LIMIT 15");
-            $test->execute();
-            $data = $test->fetchAll();
-
-            foreach ($data as $value) {
-            ?>
-              <a class="swiper-slide" href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
-                <img src="./uploads/<?= $value["file_name"] ?>" alt="">
-              </a>
-            <?php
-            }
-            ?>
+            <div class="swiper-slide">
+              <img src="img/demo_tree.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/demo_tree.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/demo_tree.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/demo_tree.png" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -182,20 +183,19 @@
 
           foreach ($data as $value) {
           ?>
-            <a href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
-              <div class="flex bg-gray-200 rounded-lg">
-                <div class="p-3 w-1/3">
-                  <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
+
+            <a class="flex bg-gray-200 rounded-lg" href="<?= $link . "?page=product&categoryid=" . $value["category"] . "&id=" . $value[0] ?>">
+              <div class="p-3 w-1/3">
+                <img class="rounded-lg min-w-12 min-h-12 bg-black" src="./uploads/<?= $value["file_name"] ?>" alt="">
+              </div>
+              <div class="flex flex-col justify-between py-2 px-3 w-2/3">
+                <div>
+                  <h5 class="text-lg"><?= $value[1] ?></h5>
+                  <label class="text-gray-400 text-sm"><?= $value["name"] ?> </label>
                 </div>
-                <div class="flex flex-col justify-between py-2 px-3 w-2/3">
-                  <div>
-                    <h5 class="text-lg"><?= $value[1] ?></h5>
-                    <label class="text-gray-400 text-sm"><?= $value["name"] ?> </label>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <p class="text-lg"><?= number_format((float)$value["price"], 2, ".", "") ?> ฿</p>
-                    <i class="fa-regular fa-square-plus h-5"></i>
-                  </div>
+                <div class="flex justify-between items-center">
+                  <p class="text-lg"><?= number_format((float)$value["price"], 2, ".", "") ?> ฿</p>
+                  <i class="fa-regular fa-square-plus h-5"></i>
                 </div>
               </div>
             </a>

@@ -86,10 +86,10 @@ if ($_POST["action"] == "create") {
                                 us!</span>
                         </div>
                         <div class="mt-2">
-                            <button type="submit" class="mt-3 text-lg font-semibold  rounded bg-black w-full text-white  px-6 py-3 block shadow-xl hover:text-white hover:bg-[#151515]">
+                            <button type="submit" class="mt-3 text-lg font-semibold  bg-black w-full text-white  px-6 py-3 block shadow-xl hover:text-white hover:bg-[#151515]">
                                 Register
                             </button>
-                            <a href="<?= $link . "?page=login" ?>" class="mt-3 text-lg font-semibold rounded bg-white w-full text-black  px-6 py-3 text-center block shadow-xl hover:text-black hover:bg-[#F9F3F3] ">
+                            <a href="<?= $link . "?page=login" ?>" class="mt-3 text-lg font-semibold bg-white w-full text-black  px-6 py-3 text-center block shadow-xl hover:text-black hover:bg-[#F9F3F3] ">
                                 Login
                             </a>
                         </div>
