@@ -55,7 +55,7 @@ if ($_POST["action"] == "create") {
                         </div>
 
                         <div class="py-2">
-                            <input tช้ype="text" required name='lastname' placeholder="Last name" class="text-md block px-3 py-2  rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                            <input type="text" required name='lastname' placeholder="Last name" class="text-md block px-3 py-2  rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                         </div>
 
                         <div class="py-2">
