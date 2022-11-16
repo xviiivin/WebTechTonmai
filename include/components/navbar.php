@@ -133,7 +133,7 @@
               </div>
             </li>
             <li class="">
-              <a href="#recommendedhome" class="">
+              <a href="<?= $link ?>#recommendedhome" class="">
                 <p class="inline-block
                 relative
                 cursor-pointer

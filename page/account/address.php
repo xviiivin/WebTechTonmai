@@ -1,7 +1,11 @@
 <?php
-$query1 = $db->prepare("SELECT * FROM history WHERE iduser = :iduser");
-$query1->execute([':iduser' => $_SESSION["login"]["id"]]);
-$result = $query1->fetchAll();
+
+if ($_POST["action"] == "create") {
+    $query1 = $db->prepare("UPDATE users SET `firstname` = :firstname, `lastname` = :lastname, `company` = :company, `address` = :address, `country` = :country, `zipcode` = :zipcode, `phone` = :phone WHERE id = :id");
+    $query1->execute([':id' => $_SESSION["login"]["id"], ':firstname' => ($_POST["firstname"]), ':zipcode' => strtolower($_POST["zipcode"]), ':phone' => $_POST["phone"], ':lastname' => ($_POST["lastname"]), ':company' => strtolower($_POST["company"]), ':address' => ($_POST["address"]), ':country' => strtolower($_POST["country"])]);
+    // print_r([':id' => $_SESSION["login"]["id"], ':firstname' => ($_POST["firstname"]), ':zipcode' => strtolower($_POST["zipcode"]), ':phone' => $_POST["phone"], ':lastname' => ($_POST["lastname"]), ':company' => strtolower($_POST["company"]), ':address' => strtolower($_POST["address"]), ':country' => strtolower($_POST["country"])]);
+    alert("success", "แก้ไขที่อยู่เรียบร้อย!!");
+}
 ?>
 <div class="container mx-auto px-1">
 
@@ -170,18 +174,12 @@ $result = $query1->fetchAll();
             fName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='firstname' value=<?= $_SESSION["login"]["firstname"] ?>>"
             lName.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='lastname' value=<?= $_SESSION["login"]["lastname"] ?>>"
             Company.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='company' value=<?= $_SESSION["login"]["company"] ?>>"
-            Address.innerHTML = "<textarea type='text' class='rounded-md border-2 border-gray-500' name='address' value=<?= $_SESSION["login"]["address"] ?>>"
+            Address.innerHTML = "<textarea type='text' class='rounded-md border-2 border-gray-500' name='address'><?= $_SESSION["login"]["address"] ?></textarea>"
             Country.innerHTML = "<input type='text' class='rounded-md border-2 border-gray-500' name='country' value=<?= $_SESSION["login"]["country"] ?>>"
             Zip.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500' name='zipcode' value=<?= $_SESSION["login"]["zipcode"] ?>>"
             Phone.innerHTML = "<input type='number' class='rounded-md border-2 border-gray-500' name='phone' value=<?= $_SESSION["login"]["phone"] ?>>"
             QEdit.innerHTML = '<button id="Edit" type="submit" class="mt-[50px] text-center bg-black text-white block hover:scale-105 w-32 pl-6 pr-6 pt-2 pb-2">Confirm</button>'
-            <?php
-            if ($_POST["action"] == "create") {
-                $query1 = $db->prepare("INSERT INTO users (`firstname`, `lastname`, `company`, `address`, `country`) VALUES (:firstname, :lastname, :company, :address, :country)");
-                $query1->execute([':firstname' => strtolower($_POST["firstname"]), ':lastname' => strtolower($_POST["lastname"]), ':company' => strtolower($_POST["company"]), ':address' => strtolower($_POST["address"]), ':country' => strtolower($_POST["country"])]);
-                // alert("success", "ล็อกอินสำเร็จแล้ว", $link . "?page=login");
-            }
-            ?>
+
         } else {
             state = true;
         }

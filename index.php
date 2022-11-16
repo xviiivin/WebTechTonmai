@@ -1,18 +1,8 @@
 <?php
-$link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-session_start();
-
 error_reporting(1);
+session_start();
 ob_start();
-
-
-
-if (empty($_SESSION["cart"])) {
-  $_SESSION["cart"] = [];
-}
-
-
-
+require './include/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,8 +43,6 @@ if (empty($_SESSION["cart"])) {
   <div id="navbar_hidden" class="sticky z-50 transition-all duration-500">
     <?php
     if ($_GET["page"] != "checkout") {
-      require './include/config.php';
-
       include("include/components/navbar.php");
     }
     ?>

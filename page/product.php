@@ -93,9 +93,16 @@ if (isset($_GET["id"])) {
                   <p>Size</p>
                   <p><?= $category["size"] ?> cm</p>
                 </div>
+
+                <?php
+
+                ?>
                 <div class="flex text-lg justify-between">
                   <span>Remaining</span>
-                  <span>1 pieces</span>
+                  <br />
+                  <?php
+                  ?>
+                  <span><?= $category["amount"] ?> pieces</span>
                 </div>
 
                 <div class="flex text-lg justify-between">
@@ -113,9 +120,7 @@ if (isset($_GET["id"])) {
               </div>
               <!-- button -->
               <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-2">
-                <button class="bg-black w-full text-white py-1 px-8 border-black border-2">Buy Now</button>
-
-
+                <a href="<?= $link."?page=checkout&idproduct=".$category['id'] ?>" class="text-center bg-black w-full text-white py-1 px-8 border-black border-2">Buy Now</a>
 
                 <button onclick="addtocart();" class="bg-white w-full py-1 px-8 border border-black border-2">Add to Cart</button>
               </div>
