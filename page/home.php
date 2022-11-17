@@ -35,15 +35,15 @@
               <div class="swiper-slide relative">
                 <div class="absolute flex flex-col">
                   <div class='border-white mb-5'>
-                    <span class="text-[8rem] -mt-[0.3em] mb-6"><?= $value["name"] ?></span>
+                    <span class="text-[8rem] -mt-[0.3em] mb-6 text-white"><?= $value["name"] ?></span>
                   </div>
                   <!-- <span class="font-medium text-2xl -mt-16 mr-12 text-end">Autumm</span> -->
                   <div class="flex justify-center">
-                    <a class="transition duration-500 border-black border py-3 px-12 text-black bg-transparent hover:bg-black hover:text-white" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
+                    <a class="transition duration-500 border-white border py-3 px-12 text-white bg-transparent hover:bg-black hover:text-white hover:border-black" href="<?= $link . "?page=product&categoryid=" . $value["id"] ?>">Shop Now</a>
                   </div>
                 </div>
 
-                <img class='opacity-50 z-[-1]' draggable="false" src="img/banner/<?= $value["img"] ?>" alt="" class="">
+                <img class='brightness-75  z-[-1]' draggable="false" src="img/banner/<?= $value["img"] ?>" alt="" class="">
               </div>
 
             <?php
