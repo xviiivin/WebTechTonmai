@@ -72,7 +72,7 @@ if ($_POST["action"] == "login") {
                     <!-- ห้ามลืม -->
                     <!-- <a class="text-[#9E9E9E]" href="#">Forget your password?</a> -->
                     <div>
-                        <button type="submit" class="mt-3 text-lg font-semibold bg-black text-white rounded-lg shadow-xl hover:text-white hover:bg-[#202020] py-3 w-full">
+                        <button type="submit" class="mt-3 text-lg font-semibold bg-black text-white shadow-xl hover:text-white hover:bg-[#202020] py-3 w-full">
                             Sign in
                         </button>
                     </div>
@@ -87,7 +87,7 @@ if ($_POST["action"] == "login") {
                 <p class="text-[#9E9E9E]">Sign up here to become one of us!</p>
                 <br />
                 <div>
-                    <a href="<?= $link . "?page=register" ?>" class="mt-3 text-lg font-semibold bg-black text-white rounded-lg shadow-xl hover:text-white hover:bg-[#202020] py-3 px-12">
+                    <a href="<?= $link . "?page=register" ?>" class="mt-3 text-lg font-semibold bg-black text-white shadow-xl hover:text-white hover:bg-[#202020] py-3 px-12">
                         Register
                     </a>
                 </div>

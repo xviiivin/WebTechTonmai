@@ -133,7 +133,7 @@
               </div>
             </li>
             <li class="">
-              <a href="#recommendedhome" class="">
+              <a href="<?= $link ?>#recommendedhome" class="">
                 <p class="inline-block
                 relative
                 cursor-pointer
@@ -268,7 +268,7 @@
               </div>
             </li>
             <li class="mt-0 py-3 px-3 hover:bg-gray-200 transition-all">
-              <a href="#recommendedhome">Recommend</a>
+              <a href="<?= $link ?>#recommendedhome">Recommend</a>
             </li>
           </ul>
           <!-- Auth -->
@@ -326,7 +326,7 @@
       </div>
       <div class="container mx-auto pb-6">
         <div class="text-center">
-          <p>Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+          <p>Poppular Searches: <b class="underline ml-2">Zanzibar Gem</b></p>
         </div>
       </div>
     </div>

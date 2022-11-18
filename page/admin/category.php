@@ -21,10 +21,9 @@
             alert("error", "มีชื่อหมวดหมู่อยู่ในระบบแล้ว");
             header("Refresh:5");
         } else {
-            $query1 = $db->prepare("INSERT INTO category (`name`) VALUES (:name)");
-            $query1->execute([':name' => ($_POST["name"])]);
+            $query1 = $db->prepare("INSERT INTO category (`name`, `img`) VALUES (:name, :img)");
+            $query1->execute([':name' => ($_POST["name"]), ':img' => $_POST["img"]]);
             alert("success", "เพิ่มหมวดหมู่เรียบร้อย");
-            header("Refresh:5");
         }
     }
 
@@ -45,11 +44,9 @@
         $check = getimagesize($_FILES["file"]["tmp_name"]);
         if ($check !== false) {
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                echo basename($newfilename);
 
-
-                $query1 = $db->prepare("INSERT INTO product (`name`, `price`, `size`, `watering`,`sunlight`, `toolstips`, `basic`, `story`, `category`, `file_name`, `date`) VALUES (:name, :price, :size, :watering, :sunlight, :toolstips, :basic, :story, :category, :file_name, :date)");
-                $query1->execute([':name' => ($_POST["name"]), ':price' => ($_POST["price"]), ':size' => ($_POST["size"]), ':watering' => ($_POST["watering"]), ':toolstips' => ($_POST["toolstips"]), ':sunlight' => $_POST["sunlight"], ':basic' => ($_POST["basic"]), ':story' => ($_POST["story"]), ':category' => ($_GET["categoryid"]), ':file_name' => ($newfilename), ':date' => (time())]);
+                $query1 = $db->prepare("INSERT INTO product (`name`, `price`, `size`, `watering`,`sunlight`, `toolstips`, `basic`, `story`, `category`, `file_name`,`amount`, `date`) VALUES (:name, :price, :size, :watering, :sunlight, :toolstips, :basic, :story, :category, :file_name, :amount, :date)");
+                $query1->execute([':name' => ($_POST["name"]), ':price' => ($_POST["price"]), ':size' => ($_POST["size"]), ':watering' => ($_POST["watering"]), ':toolstips' => ($_POST["toolstips"]), ':sunlight' => $_POST["sunlight"], ':basic' => ($_POST["basic"]), ':amount' => $_POST["amount"], ':story' => ($_POST["story"]), ':category' => ($_GET["categoryid"]), ':file_name' => ($newfilename), ':date' => (time())]);
 
                 alert("success", "เพิ่มข้อมูลเรียบร้อย");
                 header("Refresh:5");
@@ -163,6 +160,14 @@
                                 <textarea type="text" name="story" placeholder="ชื่อสินค้า" class=" mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"> </textarea>
                             </div>
 
+                            <div class="mt-3">
+                                <span class="text-center">
+                                    Amount
+                                </span>
+                                <br />
+                                <input type="number" name="amount" min="1" placeholder="" class=" mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                            </div>
+
 
                             <div class="mt-3">
                                 <span class="text-center">
@@ -177,6 +182,8 @@
       file:bg-violet-50 file:text-violet-700
       hover:file:bg-violet-100" />
                             </div>
+
+
                             <br />
 
                             <input type="text" name="action" value="addproduct" style="display: none;" placeholder="ชื่อหมวดหมู่" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -244,9 +251,10 @@
                             <span class="text-center">
                                 เพิ่มหมวดหมู่สินค้า
                             </span>
-                            <input type="text" name="name" placeholder="ชื่อหมวดหมู่" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                            <input type="text" name="name" placeholder="ชื่อหมวดหมู่" class="w-4/5 text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                            <input type="text" name="img" placeholder="รูปภาพ" class="w-4/5 text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
                             <input type="text" name="action" value="addcategory" style="display: none;" placeholder="ชื่อหมวดหมู่" class="text-center mt-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                            <button type="submit" class="  mt-4 px-11 w-full py-1 text-center rounded-md border-2 bg-black text-white">เพิ่มรายการ</button>
+                            <button type="submit" class="mt-4 px-11 w-full py-1 text-center rounded-md border-2 bg-black text-white">เพิ่มรายการ</button>
                         </form>
                     </center>
                 </div>
