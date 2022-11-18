@@ -326,7 +326,7 @@
       </div>
       <div class="container mx-auto pb-6">
         <div class="text-center">
-          <p>Poppular Searches: <b class="underline ml-2">Air Purifying Tree</b></p>
+          <p>Poppular Searches: <b class="underline ml-2">Zanzibar Gem</b></p>
         </div>
       </div>
     </div>
